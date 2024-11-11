@@ -1,0 +1,57 @@
+.activeButton {
+  background-color: rgba(248, 248, 248, 0.1);
+}
+
+.activeButton:hover{
+  background-color: rgba(248, 248, 248, 0.05);
+}
+.activeButton:active{
+  background-color: rgba(40, 40, 40, 0.20);
+}
+
+/* bg-image */
+.bg-linear-mask {
+  background-image: linear-gradient(180deg, rgba(18, 18, 18, 0.20) 0%, rgba(18, 18, 18, 0.20) 85%, rgba(18, 18, 18, 0.00) 100%);
+}
+.bg-linear-card {
+  background-image: linear-gradient(165deg, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0.10) 100%);
+}
+.bg-linear-red {
+  background-image: linear-gradient(0deg, #BD3027 0%, #BD3027 100%, rgba(40, 40, 40, 0.70));
+}
+.bg-linear-hover {
+  background-image: linear-gradient(0deg, rgba(248, 248, 248, 0.10) 0%, rgba(248, 248, 248, 0.10) 100%,rgba(40, 40, 40, 0.70));
+}
+.bg-linear-object {
+  background-image: linear-gradient(180deg, rgba(248, 248, 248, 0.90) 0%, rgba(248, 248, 248, 0.30) 100%);
+}
+
+/* blur */
+.backdrop-blur-50 {
+  backdrop-filter: blur(50px);
+}
+.backdrop-blur-16 {
+  backdrop-filter: blur(16px);
+}
+
+/* before */
+.before\:bg-linear-card::before {
+  content: var(--tw-content);
+  background-image: linear-gradient(165deg, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0.10) 100%);
+}
+
+/* after */
+.after\:backdrop-blur-50::after {
+  content: var(--tw-content);
+  backdrop-filter: blur(50px);
+}
+
+/* hover */
+.hover\:bg-linear-hover:hover {
+  background-image: linear-gradient(0deg, rgba(248, 248, 248, 0.10) 0%, rgba(248, 248, 248, 0.10) 100%,rgba(40, 40, 40, 0.70));
+}
+
+.peer:checked ~ .peer-checked\:after\:bg-linear-object::after {
+  content: var(--tw-content);
+  background-image: linear-gradient(180deg, rgba(248, 248, 248, 0.90) 0%, rgba(248, 248, 248, 0.30) 100%);
+}

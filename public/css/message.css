@@ -1,0 +1,8 @@
+.conversation-item.active {
+  background: var(--netral-210, #f8f8f81a);
+  .conversation-detail {
+    .user-note-text {
+      color: var(--text-primary, #f8f8f8f2);
+    }
+  }
+}

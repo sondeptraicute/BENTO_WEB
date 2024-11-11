@@ -1,0 +1,16 @@
+/*new added*/
+.search-bar {
+  display: flex;
+  padding: 10px 12px 10px 10px;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  margin-left: 10px;
+  overflow-x: hidden;
+
+  border-radius: 48px;
+  background: var(--neutral-neutral-370, rgba(40, 40, 40, 0.7));
+
+  /* Blur 32 */
+  backdrop-filter: blur(16px);
+}

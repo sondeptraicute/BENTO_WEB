@@ -1,0 +1,1082 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notification</title>
+  <link rel="stylesheet" href="../public/css/global.css" />
+  <link rel="stylesheet" href="../public/css/style.css" />
+  <link rel="stylesheet" href="../public/css/home.css" />
+  <link rel="stylesheet" href="../public/css/custom.css" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../cf.js"></script>
+</head>
+
+<body>
+  <div id="container"
+    class="bg-[#444444] text-text-second font-rubik overflow-hidden relative h-screen shadow-wrapper md:flex">
+
+    <sidebar id="sidebar"
+      class="hidden z-50 w-[72px] flex-col justify-start items-start p-3 fixed transition-all duration-[0.5s] min-h-screen bg-[#282828] md:bg-surface-3 md:flex ">
+
+      <div id="top-sidebar" class="w-full flex justify-between items-center">
+        <img id="logo" src="../public/svg/hexagon_logo.svg" alt="logo-in-home" class="size-[40px]" />
+        <button id="btn-collapse-control" class="min-w-6 invisible">
+          <img src="../public/svg/ic_sidebar_collapse.svg" alt="icon collapse" class="size-[24px]" />
+        </button>
+        <button id="btn-collapse-sidebar" class="md:hidden bg-button p-[0.625rem] rounded-full">
+          <img src="../public/svg/ic_close.svg" alt="icon collapse" class="size-[24px]" />
+        </button>
+      </div>
+
+      <div id="sidebar-menu" class="w-full flex flex-col justify-start gap-1 mt-3 grow">
+        <a href="./home.html" class="sidebar-items">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="m-1">
+            <g opacity="0.8">
+              <path
+                d="M8.96046 3.73693L9.43539 4.3174L8.96046 3.73693ZM11.1874 2.23837L11.3906 2.96033L11.1874 2.23837ZM15.0395 3.73694L15.5145 3.15647H15.5145L15.0395 3.73694ZM12.8126 2.23837L12.6094 2.96033L12.8126 2.23837ZM5.38803 19.9231L5.04754 20.5913L5.38803 19.9231ZM3.75 15.45H4.5H3.75ZM4.07698 18.612L3.40873 18.9525L4.07698 18.612ZM19.923 18.612L20.5913 18.9525L19.923 18.612ZM18.612 19.9231L18.9525 20.5913L18.612 19.9231ZM20.1449 8.63444L19.4212 8.83125L20.1449 8.63444ZM18.4895 6.55966L18.0146 7.14013L18.0146 7.14013L18.4895 6.55966ZM19.6924 7.67968L19.0818 8.11518L19.6924 7.67968ZM3.75 10.2747H3H3.75ZM3.85513 8.63444L4.57885 8.83125L3.85513 8.63444ZM5.51046 6.55966L5.98539 7.14013L5.51046 6.55966ZM4.30757 7.67968L4.91818 8.11518L4.30757 7.67968ZM7.75 15.5C7.33579 15.5 7 15.8358 7 16.25C7 16.6643 7.33579 17 7.75 17V15.5ZM16.25 17C16.6642 17 17 16.6643 17 16.25C17 15.8358 16.6642 15.5 16.25 15.5V17ZM19.5 10.2747V15.45H21V10.2747H19.5ZM15.45 19.5H8.55V21H15.45V19.5ZM4.5 15.45V10.2747H3V15.45H4.5ZM5.98539 7.14013L9.43539 4.3174L8.48553 3.15647L5.03553 5.97919L5.98539 7.14013ZM14.5646 4.3174L18.0146 7.14013L18.9645 5.9792L15.5145 3.15647L14.5646 4.3174ZM9.43539 4.3174C9.98538 3.86741 10.3667 3.55605 10.6847 3.33303C10.9949 3.11544 11.2023 3.0133 11.3906 2.96033L10.9843 1.51641C10.5699 1.63301 10.2052 1.83715 9.82339 2.10495C9.44929 2.36732 9.01843 2.72045 8.48553 3.15647L9.43539 4.3174ZM15.5145 3.15647C14.9816 2.72046 14.5507 2.36732 14.1766 2.10495C13.7948 1.83715 13.4301 1.63301 13.0157 1.51641L12.6094 2.96033C12.7977 3.0133 13.0051 3.11544 13.3153 3.33303C13.6333 3.55605 14.0146 3.86741 14.5646 4.3174L15.5145 3.15647ZM11.3906 2.96033C11.7891 2.84818 12.2109 2.84818 12.6094 2.96033L13.0157 1.51641C12.3515 1.32949 11.6485 1.32949 10.9843 1.51641L11.3906 2.96033ZM8.55 19.5C7.69755 19.5 7.10331 19.4995 6.64068 19.4617C6.1868 19.4246 5.92604 19.3554 5.72852 19.2548L5.04754 20.5913C5.49175 20.8177 5.97189 20.912 6.51853 20.9567C7.05641 21.0006 7.7223 21 8.55 21V19.5ZM3 15.45C3 16.2777 2.99942 16.9436 3.04336 17.4815C3.08803 18.0281 3.18238 18.5083 3.40873 18.9525L4.74524 18.2715C4.6446 18.074 4.57546 17.8132 4.53838 17.3594C4.50058 16.8967 4.5 16.3025 4.5 15.45H3ZM5.72852 19.2548C5.30516 19.0391 4.96095 18.6949 4.74524 18.2715L3.40873 18.9525C3.76825 19.6581 4.34193 20.2318 5.04754 20.5913L5.72852 19.2548ZM19.5 15.45C19.5 16.3025 19.4994 16.8967 19.4616 17.3594C19.4245 17.8132 19.3554 18.074 19.2548 18.2715L20.5913 18.9525C20.8176 18.5083 20.912 18.0281 20.9566 17.4815C21.0006 16.9436 21 16.2777 21 15.45H19.5ZM15.45 21C16.2777 21 16.9436 21.0006 17.4815 20.9567C18.0281 20.912 18.5082 20.8177 18.9525 20.5913L18.2715 19.2548C18.074 19.3554 17.8132 19.4246 17.3593 19.4617C16.8967 19.4995 16.3025 19.5 15.45 19.5V21ZM19.2548 18.2715C19.039 18.6949 18.6948 19.0391 18.2715 19.2548L18.9525 20.5913C19.6581 20.2318 20.2317 19.6581 20.5913 18.9525L19.2548 18.2715ZM21 10.2747C21 9.48 21.0062 8.94352 20.8686 8.43763L19.4212 8.83125C19.4938 9.09856 19.5 9.39782 19.5 10.2747H21ZM18.0146 7.14013C18.6932 7.69538 18.921 7.88965 19.0818 8.11518L20.303 7.24418C19.9986 6.81736 19.5795 6.4824 18.9645 5.9792L18.0146 7.14013ZM20.8686 8.43763C20.7522 8.00949 20.5607 7.6054 20.303 7.24418L19.0818 8.11518C19.2364 8.33191 19.3513 8.57436 19.4212 8.83125L20.8686 8.43763ZM4.5 10.2747C4.5 9.39782 4.50616 9.09856 4.57885 8.83125L3.13141 8.43763C2.99384 8.94352 3 9.48 3 10.2747H4.5ZM5.03553 5.97919C4.4205 6.4824 4.00139 6.81736 3.69697 7.24418L4.91818 8.11518C5.07903 7.88965 5.30675 7.69538 5.98539 7.14013L5.03553 5.97919ZM4.57885 8.83125C4.64871 8.57436 4.7636 8.33191 4.91818 8.11518L3.69697 7.24418C3.43933 7.60541 3.24784 8.00949 3.13141 8.43763L4.57885 8.83125ZM7.75 17H16.25V15.5H7.75V17Z"
+                fill="#F8F8F8" fill-opacity="0.7" />
+            </g>
+          </svg>
+          <span class="text-text-light base text-sm font-semibold">Home</span>
+        </a>
+        <a href="notification.html" class="sidebar-items">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="m-1">
+            <g opacity="0.8">
+              <path
+                d="M12 5.57193C18.3331 -0.86765 29.1898 11.0916 12 20.75C-5.18982 11.0916 5.66687 -0.867651 12 5.57193Z"
+                stroke="#F8F8F8" stroke-opacity="0.5" stroke-width="1.5" stroke-linejoin="round" />
+            </g>
+          </svg>
+          <span class="text-text-light base text-sm font-semibold">Notification</span>
+        </a>
+        <a href="./message.html" class="sidebar-items">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="m-1">
+            <g opacity="0.8">
+              <path
+                d="M15.25 9.75H8.75M12.25 14.25H8.75M2.75 20.25H16.25C19.0114 20.25 21.25 18.0114 21.25 15.25V8.75C21.25 5.98858 19.0114 3.75 16.25 3.75H7.75C4.98858 3.75 2.75 5.98858 2.75 8.75V20.25Z"
+                stroke="#F8F8F8" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </g>
+          </svg>
+          <span class="text-text-light base text-sm font-semibold">Messages</span>
+        </a>
+        <a href="./profile_user_view.html" class="sidebar-items">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="m-1">
+            <g opacity="0.8">
+              <path
+                d="M15.7499 6.5C15.7499 8.57107 14.071 10.25 11.9999 10.25C9.92886 10.25 8.24993 8.57107 8.24993 6.5C8.24993 4.42893 9.92886 2.75 11.9999 2.75C14.071 2.75 15.7499 4.42893 15.7499 6.5Z"
+                stroke="#F8F8F8" stroke-opacity="0.5" stroke-width="1.5" stroke-linejoin="round" />
+              <path
+                d="M11.9999 13.25C9.02147 13.25 6.67426 14.8039 5.43328 17.1121C4.59617 18.6691 6.02742 20.25 7.79518 20.25H16.2047C17.9724 20.25 19.4037 18.6691 18.5666 17.1121C17.3256 14.8039 14.9784 13.25 11.9999 13.25Z"
+                stroke="#F8F8F8" stroke-opacity="0.5" stroke-width="1.5" stroke-linejoin="round" />
+            </g>
+          </svg>
+          <span class="text-text-light base text-sm font-semibold">Profile</span>
+        </a>
+        <a href="./explore.html" class="sidebar-items">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="m-1">
+            <g opacity="0.8">
+              <path
+                d="M7.75 3.75C7.75 3.33579 7.41421 3 7 3C6.58579 3 6.25 3.33579 6.25 3.75H7.75ZM6.25 10.25C6.25 10.6642 6.58579 11 7 11C7.41421 11 7.75 10.6642 7.75 10.25H6.25ZM3.75 6.25C3.33579 6.25 3 6.58579 3 7C3 7.41421 3.33579 7.75 3.75 7.75V6.25ZM10.25 7.75C10.6642 7.75 11 7.41421 11 7C11 6.58579 10.6642 6.25 10.25 6.25V7.75ZM19.8284 15.2322C20.1213 14.9393 20.1213 14.4645 19.8284 14.1716C19.5355 13.8787 19.0607 13.8787 18.7678 14.1716L19.8284 15.2322ZM14.1716 18.7678C13.8787 19.0607 13.8787 19.5355 14.1716 19.8284C14.4645 20.1213 14.9393 20.1213 15.2322 19.8284L14.1716 18.7678ZM15.2322 14.1716C14.9393 13.8787 14.4645 13.8787 14.1716 14.1716C13.8787 14.4645 13.8787 14.9393 14.1716 15.2322L15.2322 14.1716ZM18.7678 19.8284C19.0607 20.1213 19.5355 20.1213 19.8284 19.8284C20.1213 19.5355 20.1213 19.0607 19.8284 18.7678L18.7678 19.8284ZM17 9.5C15.6193 9.5 14.5 8.38071 14.5 7H13C13 9.20914 14.7909 11 17 11V9.5ZM19.5 7C19.5 8.38071 18.3807 9.5 17 9.5V11C19.2091 11 21 9.20914 21 7H19.5ZM17 4.5C18.3807 4.5 19.5 5.61929 19.5 7H21C21 4.79086 19.2091 3 17 3V4.5ZM17 3C14.7909 3 13 4.79086 13 7H14.5C14.5 5.61929 15.6193 4.5 17 4.5V3ZM6.25 3.75V7H7.75V3.75H6.25ZM6.25 7V10.25H7.75V7H6.25ZM3.75 7.75H7V6.25H3.75V7.75ZM7 7.75H10.25V6.25H7V7.75ZM18.7678 14.1716L16.4697 16.4697L17.5303 17.5303L19.8284 15.2322L18.7678 14.1716ZM16.4697 16.4697L14.1716 18.7678L15.2322 19.8284L17.5303 17.5303L16.4697 16.4697ZM14.1716 15.2322L16.4697 17.5303L17.5303 16.4697L15.2322 14.1716L14.1716 15.2322ZM16.4697 17.5303L18.7678 19.8284L19.8284 18.7678L17.5303 16.4697L16.4697 17.5303ZM5.25 14.5H8.75V13H5.25V14.5ZM9.5 15.25V18.75H11V15.25H9.5ZM8.75 19.5H5.25V21H8.75V19.5ZM4.5 18.75V15.25H3V18.75H4.5ZM5.25 19.5C4.83579 19.5 4.5 19.1642 4.5 18.75H3C3 19.9926 4.00736 21 5.25 21V19.5ZM9.5 18.75C9.5 19.1642 9.16421 19.5 8.75 19.5V21C9.99264 21 11 19.9926 11 18.75H9.5ZM8.75 14.5C9.16421 14.5 9.5 14.8358 9.5 15.25H11C11 14.0074 9.99264 13 8.75 13V14.5ZM5.25 13C4.00736 13 3 14.0074 3 15.25H4.5C4.5 14.8358 4.83579 14.5 5.25 14.5V13Z"
+                fill="#F8F8F8" fill-opacity="0.7" />
+            </g>
+          </svg>
+          <span class="text-text-light base text-sm font-semibold">Explore</span>
+        </a>
+      </div>
+
+      <div id="bottom-sidebar" class="w-full flex flex-col gap-2 p-0">
+        <div class="flex items-end gap-3 p-1.5">
+          <a href="./profile_user_view.html">
+            <div id="user-info" class="relative">
+              <div
+                class="absolute size-[1.25rem] -left-1 -top-1 rounded-full bg-[#F8F8F8E5] border-[3px] border-[#282828]">
+              </div>
+
+              <img src="https://i.pinimg.com/originals/d3/6f/ef/d36fef4f4885354afcfd3753dee95741.jpg" alt="avatar"
+                class="rounded-full min-w-[40px] size-[40px]" />
+            </div>
+          </a>
+          <div class="user-name flex md:hidden flex-col grow">
+            <span class="text-text-secondary base text-sm font-semibold">Thanh</span>
+            <span class="text-text-light caption text-xs font-normal">@nht2</span>
+          </div>
+
+          <div id="group-btn" class="flex flex-row items-center gap-3 md:flex-col-reverse">
+            <button class="btn-more hidden btn-block justify-self-end">
+              <img src="../public/svg/ic_more.svg" alt="more" class="size-[24px] m-[0.625rem]" />
+            </button>
+
+            <div id="options-more" class="flex flex-row items-center md:bg-neutral-600 md:flex-col md:rounded-[2rem]">
+              <a href="settings.html">
+                <button class="flex-1 p-2.5 hover:bg-neutral-700 rounded-[2rem] md:rounded-bl-none md:rounded-br-none">
+                  <img src="../public/svg/ic_setting.svg" alt="setting" class="size-[24px]" />
+                </button>
+              </a>
+              <a href="login.html">
+                <button class="flex-1 p-2.5 hover:bg-neutral-700 rounded-[2rem] md:rounded-tl-none md:rounded-tr-none">
+                  <img src="../public/svg/ic_logout.svg" alt="logout" class="size-[24px]" />
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <button class="hidden md:block w-fit bg-button rounded-full p-[10px] btn-add-post">
+          <img src="../public/svg/ic_add.svg" alt="icon add" class="max-size-[24px]" />
+        </button>
+
+        <button
+          class="w-full base text-sm font-semibold text-text-secondary bg-button rounded-[1.25rem] px-6 py-3 btn-block md:hidden">Post</button>
+          <p class="text-text-secondary text-[10px] text-center">Code by <a target="_blank" href="https://200lab.io/" class="">@<span class="text-[#278e4f]">200</span><span class="text-[#2170a1]">Lab</span></a></p>
+        </div>
+    </sidebar>
+
+    <!-- noti container -->
+    <section id="main-container"
+      class="main-container pb-0 md:flex-grow bg-backgroundmain-container w-full h-full md:h-full bg-surface p-3 md:ml-[72px] lg:mr-[21.25rem] xl:mr-[30rem] transition-all duration-[0.5s]">
+      <!-- Appbar -->
+      <div class="flex justify-between items-center mb-3">
+        <!-- <div class="flex items-center justify-start">
+          rounded secondary button style -- back button
+          <a href="./home.html"
+            class="md:hidden relative p-[1.5px] bg-neutral3-70 hover:bg-linear-hover rounded-full before:content-[''] before:absolute before:inset-0 before:opacity-25 before:bg-linear-card before:rounded-full after:content-[''] after:absolute after:inset-[1.5px] after:bg-[#313131] after:rounded-full after:backdrop-blur-50 after:shadow-button">
+            <div
+              class="relative z-10 inline-flex gap-2.5 p-2.5 bg-neutral3-70 justify-center items-center rounded-full backdrop-blur-50 shadow-button stroke-text-second hover:bg-linear-hover hover:stroke-text-prime">
+              arrow icon
+              <svg class="h-6 w-6" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <g id="arrow-left" opacity="0.8">
+                  <path id="Icon"
+                    d="M8.75345 18.2461L4.62478 14.1174C3.4532 12.9459 3.4532 11.0464 4.62477 9.87479L8.75345 5.74609M4.25345 11.9961L20.2535 11.9961"
+                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+              </svg>
+            </div>
+          </a>
+        </div> -->
+        <h2 class="font-rubik font-medium text-title text-text-second mx-3">
+          Notification
+        </h2>
+        <!-- setting icon -->
+        <div
+          class="relative p-[1.5px] bg-neutral3-70 hover:bg-linear-hover rounded-full before:content-[''] before:absolute before:inset-0 before:opacity-25 before:bg-linear-card before:rounded-full after:content-[''] after:absolute after:inset-[1.5px] after:bg-[#313131] after:rounded-full after:backdrop-blur-50 after:shadow-button">
+          <div
+            class="relative z-10 inline-flex gap-2.5 p-2.5 bg-neutral3-70 justify-center items-center rounded-full backdrop-blur-50 shadow-button stroke-text-second hover:bg-linear-hover hover:stroke-text-prime">
+            <!-- arrow icon -->
+            <svg class="h-6 w-6 grou" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <g id="settings slider hor" opacity="0.8">
+                <path id="Icon"
+                  d="M13.75 7H3.75M13.75 7C13.75 5.20437 15.2044 3.75 17 3.75C18.7956 3.75 20.25 5.20437 20.25 7C20.25 8.79563 18.7956 10.25 17 10.25C15.2044 10.25 13.75 8.79563 13.75 7ZM20.25 17H12.25M12.25 17C12.25 18.7956 10.7956 20.25 9 20.25C7.20438 20.25 5.75 18.7956 5.75 17M12.25 17C12.25 15.2044 10.7956 13.75 9 13.75C7.20438 13.75 5.75 15.2044 5.75 17M5.75 17H3.75"
+                  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div id="notification-section" class="flex flex-col h-full">
+        <!-- Tabbar -->
+        <div class="rounded-full w-full h-fit p-1 mb-3 bg-neutral3-60 flex">
+          <button id="tab-all" class="tab-button w-1/3 group md:w-1/4">
+            <div
+              class="relative box-border p-[1.5px] group-[.active]:bg-neutral2-5 rounded-full before:hidden group-[.active]:before:block before:absolute before:inset-0 before:opacity-25 before:bg-linear-card before:rounded-full after:hidden group-[.active]:after:block after:absolute after:inset-[1.5px] after:bg-[#313131] after:rounded-full after:shadow-toggle">
+              <div
+                class="relative z-10 rounded-full group-[.active]:bg-neutral2-5 w-full h-full gap-2 px-6 py-2 flex justify-center items-center">
+                <h6
+                  class="group-[.active]:text-text-prime font-rubik font-semibold text-sm text-text-second group-hover:text-text-prime">
+                  All
+                </h6>
+              </div>
+            </div>
+          </button>
+          <button id="tab-likes" class="tab-button w-1/3 group md:w-1/4">
+            <div
+              class="relative box-border p-[1.5px] group-[.active]:bg-neutral2-5 rounded-full before:hidden group-[.active]:before:block before:absolute before:inset-0 before:opacity-25 before:bg-linear-card before:rounded-full after:hidden group-[.active]:after:block after:absolute after:inset-[1.5px] after:bg-[#313131] after:rounded-full after:shadow-toggle">
+              <div
+                class="relative z-10 rounded-full group-[.active]:bg-neutral2-5 w-full h-full gap-2 px-6 py-2 flex justify-center items-center">
+                <h6
+                  class="group-[.active]:text-text-prime font-rubik font-semibold text-sm text-text-second group-hover:text-text-prime">
+                  Likes
+                </h6>
+              </div>
+            </div>
+          </button>
+          <button id="tab-replies" class="tab-button w-1/3 group md:w-1/4">
+            <div
+              class="relative box-border p-[1.5px] group-[.active]:bg-neutral2-5 rounded-full before:hidden group-[.active]:before:block before:absolute before:inset-0 before:opacity-25 before:bg-linear-card before:rounded-full after:hidden group-[.active]:after:block after:absolute after:inset-[1.5px] after:bg-[#313131] after:rounded-full after:shadow-toggle">
+              <div
+                class="relative z-10 rounded-full group-[.active]:bg-neutral2-5 w-full h-full gap-2 px-6 py-2 flex justify-center items-center">
+                <h6
+                  class="group-[.active]:text-text-prime font-rubik font-semibold text-sm text-text-second group-hover:text-text-prime">
+                  Replies
+                </h6>
+              </div>
+            </div>
+          </button>
+          <button id="tab-follows" class="tab-button w-1/4 group hidden md:block">
+            <div
+              class="relative box-border p-[1.5px] group-[.active]:bg-neutral2-5 rounded-full before:hidden group-[.active]:before:block before:absolute before:inset-0 before:opacity-25 before:bg-linear-card before:rounded-full after:hidden group-[.active]:after:block after:absolute after:inset-[1.5px] after:bg-[#313131] after:rounded-full after:shadow-toggle">
+              <div
+                class="relative z-10 rounded-full group-[.active]:bg-neutral2-5 w-full h-full gap-2 px-6 py-2 flex justify-center items-center">
+                <h6
+                  class="group-[.active]:text-text-prime font-rubik font-semibold text-sm text-text-second group-hover:text-text-prime">
+                  Follows
+                </h6>
+              </div>
+            </div>
+          </button>
+        </div>
+        <!--  -->
+        <!-- Noti List -->
+        <!-- ALL -->
+        <ul id="content-all"
+          class="tab-content hidden overflow-auto no-scrollbar flex-grow gap-2 flex-col relative mb-[144px] md:bg-0 bg-gradient-to-b from-[rgba(40,40,40,0)] from-85% to-[#313131]">
+          <!-- #1 -->
+          <!-- Noti List item  -->
+          <li class="bg-neutral2-2 rounded-[20px] p-3 flex gap-2.5 items-start self-stretch">
+            <!-- circle avatar -->
+            <div class="relative">
+              <div class="h-11 w-11">
+                <img src="../public/img/avatar-1.png" alt="" class="h-full w-full rounded-full object-cover" />
+              </div>
+              <div class="absolute -bottom-1 -right-1 rounded-full p-0.5 bg-[#313131]">
+                <div class="p-[5px] bg-[#8B33E2] rounded-full">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="heart" opacity="0.8">
+                      <path id="heart-icon" d="M6 1.875V6M6 6V10.125M6 6H1.875M6 6H10.125" stroke="#F8F8F8"
+                        stroke-opacity="0.95" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+
+            <!-- noti contents -->
+            <div class="flex flex-grow flex-col gap-3">
+              <div>
+                <h6 class="line-clamp-2 font-rubik text-sm font-bold text-text-prime">
+                  Kohaku, Moyo Shiro, Dash and 2 others follow you
+                </h6>
+                <p class="font-rubik text-sm text-text-second">follow you</p>
+              </div>
+              <p class="font-rubik text-sm text-text-tertiary">3h ago</p>
+            </div>
+            <!--  -->
+          </li>
+          <!--  -->
+
+          <!-- #2 -->
+          <!-- Noti List item  -->
+          <li class="bg-neutral2-2 rounded-[20px] p-3 flex gap-2.5 items-start self-stretch">
+            <!-- circle avatar -->
+            <div class="relative">
+              <div class="h-11 w-11">
+                <img src="../public/img/avatar-2.png" alt="" class="h-full w-full rounded-full object-cover" />
+              </div>
+              <div class="absolute -bottom-1 -right-1 rounded-full p-0.5 bg-[#313131]">
+                <div class="p-[5px] bg-wine rounded-full">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="heart" opacity="0.8">
+                      <path id="heart-icon"
+                        d="M6.18348 10.702C10.5433 8.25233 11.5429 5.38357 10.7585 3.42289C10.3749 2.4641 9.57104 1.77961 8.62611 1.5684C7.7669 1.37635 6.8197 1.58156 5.99976 2.27478C5.17982 1.58156 4.23262 1.37635 3.37341 1.5684C2.42848 1.77961 1.62462 2.46411 1.24104 3.4229C0.456646 5.38358 1.45621 8.25234 5.8161 10.702C5.93017 10.7661 6.06941 10.7661 6.18348 10.702Z"
+                        fill="#F8F8F8" fill-opacity="0.95" />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+
+            <!-- noti contents -->
+            <div class="flex flex-grow flex-col gap-3">
+              <div class="">
+                <h6 class="line-clamp-2 font-rubik text-sm text-text-second">
+                  <span class="font-bold text-text-prime">Kohaku </span>
+                  liked your post
+                </h6>
+                <p class="text-sm text-text-prime truncate">
+                  SimpleList link.com/media.png
+                </p>
+              </div>
+              <p class="font-rubik text-sm text-text-tertiary">3h ago</p>
+            </div>
+            <!--  -->
+          </li>
+          <!--  -->
+
+          <!-- #3 -->
+          <!-- Noti List item  -->
+          <li class="bg-neutral2-2 rounded-[20px] p-3 flex gap-2.5 items-start self-stretch">
+            <!-- circle avatar -->
+            <div class="relative">
+              <div class="h-11 w-11">
+                <img src="../public/img/avatar-3.png" alt="" class="h-full w-full rounded-full object-cover" />
+              </div>
+              <div class="absolute -bottom-1 -right-1 rounded-full p-0.5 bg-[#313131]">
+                <div class="p-[5px] bg-[#21B27E] rounded-full">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="heart" opacity="0.8">
+                      <path id="heart-icon"
+                        d="M2.375 6.625V5.875C2.375 4.21815 3.71815 2.875 5.375 2.875H7.55357M6.32286 1.375L7.87643 2.875L6.32286 4.375M9.625 5.375V6.125C9.625 7.78185 8.28185 9.125 6.625 9.125H4.44643M5.67714 10.625L4.12357 9.125L5.67714 7.625"
+                        stroke="#F8F8F8" stroke-opacity="0.95" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+
+            <!-- noti contents -->
+            <div class="flex flex-grow flex-col gap-3">
+              <div class="">
+                <h6 class="line-clamp-2 font-rubik text-sm text-text-second">
+                  <span class="font-bold text-text-prime">Kohaku </span>
+                  reported your post
+                </h6>
+                <p class="text-sm text-text-prime truncate">
+                  SimpleList link.com/media.png
+                </p>
+              </div>
+              <p class="font-rubik text-sm text-text-tertiary">3h ago</p>
+            </div>
+            <!--  -->
+          </li>
+          <!--  -->
+
+          <!-- #4 -->
+          <!-- Noti List item  -->
+          <li class="bg-neutral2-2 rounded-[20px] p-3 flex gap-2.5 items-start self-stretch">
+            <!-- circle avatar -->
+            <div class="relative">
+              <div class="h-11 w-11">
+                <img src="../public/img/avatar-4.png" alt="" class="h-full w-full rounded-full object-cover" />
+              </div>
+              <div class="absolute -bottom-1 -right-1 rounded-full p-0.5 bg-[#313131]">
+                <div class="p-[5px] bg-[#8B33E2] rounded-full">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="heart" opacity="0.8">
+                      <path id="heart-icon" d="M6 1.875V6M6 6V10.125M6 6H1.875M6 6H10.125" stroke="#F8F8F8"
+                        stroke-opacity="0.95" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+
+            <!-- noti contents -->
+            <div class="flex flex-grow flex-col gap-3">
+              <div class="">
+                <h6 class="line-clamp-2 font-rubik text-sm text-text-second">
+                  <span class="font-bold text-text-prime">Kohaku </span>
+                  commented on your post
+                </h6>
+                <p class="text-sm text-text-prime line-clamp-2">
+                  Always amazed with how you present your work. Love it so
+                  much
+                </p>
+              </div>
+              <p class="font-rubik text-sm text-text-tertiary">3h ago</p>
+            </div>
+            <!--  -->
+          </li>
+          <!--  -->
+
+          <!-- #5 -->
+          <!-- Noti List item  -->
+          <li class="bg-neutral2-2 rounded-[20px] p-3 flex gap-2.5 items-start self-stretch">
+            <!-- circle avatar -->
+            <div class="relative">
+              <div class="h-11 w-11">
+                <img src="../public/img/avatar-5.png" alt="" class="h-full w-full rounded-full object-cover" />
+              </div>
+              <div class="absolute -bottom-1 -right-1 rounded-full p-0.5 bg-[#313131]">
+                <div class="p-[5px] bg-[#BD3027] rounded-full">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="heart" opacity="0.8">
+                      <path id="heart-icon"
+                        d="M6.18348 10.702C10.5433 8.25233 11.5429 5.38357 10.7585 3.42289C10.3749 2.4641 9.57104 1.77961 8.62611 1.5684C7.7669 1.37635 6.8197 1.58156 5.99976 2.27478C5.17982 1.58156 4.23262 1.37635 3.37341 1.5684C2.42848 1.77961 1.62462 2.46411 1.24104 3.4229C0.456646 5.38358 1.45621 8.25234 5.8161 10.702C5.93017 10.7661 6.06941 10.7661 6.18348 10.702Z"
+                        fill="#F8F8F8" fill-opacity="0.95" />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+
+            <!-- noti contents -->
+            <div class="flex flex-grow flex-col gap-3">
+              <div class="">
+                <h6 class="line-clamp-2 font-rubik text-sm text-text-second">
+                  <span class="font-bold text-text-prime">Kohaku </span>
+                  liked your post
+                </h6>
+                <p class="text-sm text-text-prime truncate">
+                  SimpleList link.com/media.png
+                </p>
+              </div>
+              <p class="font-rubik text-sm text-text-tertiary">3h ago</p>
+            </div>
+            <!--  -->
+          </li>
+          <!--  -->
+
+          <!-- #6 -->
+          <!-- Noti List item  -->
+          <li class="bg-neutral2-2 rounded-[20px] p-3 flex gap-2.5 items-start self-stretch">
+            <!-- circle avatar -->
+            <div class="relative">
+              <div class="h-11 w-11">
+                <img src="../public/img/avatar-6.png" alt="" class="h-full w-full rounded-full object-cover" />
+              </div>
+              <div class="absolute -bottom-1 -right-1 rounded-full p-0.5 bg-[#313131]">
+                <div class="p-[5px] bg-[#8B33E2] rounded-full">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="heart" opacity="0.8">
+                      <path id="heart-icon" d="M6 1.875V6M6 6V10.125M6 6H1.875M6 6H10.125" stroke="#F8F8F8"
+                        stroke-opacity="0.95" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+
+            <!-- noti contents -->
+            <div class="flex flex-grow flex-col gap-3">
+              <div class="">
+                <h6 class="line-clamp-2 font-bold text-sm opacity-80 text-text-prime">
+                  Kohaku, Moyo Shiro, Dash and 2 others follow you
+                </h6>
+                <p class="font-rubik text-sm text-text-second">follow you</p>
+              </div>
+              <p class="font-rubik text-sm text-text-tertiary">3h ago</p>
+            </div>
+            <!--  -->
+          </li>
+          <!--  -->
+        </ul>
+
+        <!-- Likes -->
+        <ul id="content-likes" class="tab-content hidden overflow-auto no-scrollbar flex-grow gap-2 flex-col mb-40">
+          <!-- #1 -->
+          <!-- Noti List item  -->
+          <li class="bg-neutral2-2 rounded-[20px] p-3 flex gap-2.5 items-start self-stretch">
+            <!-- circle avatar -->
+            <div class="relative">
+              <div class="h-11 w-11">
+                <img src="../public/img/avatar-2.png" alt="" class="h-full w-full rounded-full object-cover" />
+              </div>
+              <div class="absolute -bottom-1 -right-1 rounded-full p-0.5 bg-[#313131]">
+                <div class="p-[5px] bg-[#BD3027] rounded-full">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="heart" opacity="0.8">
+                      <path id="heart-icon"
+                        d="M6.18348 10.702C10.5433 8.25233 11.5429 5.38357 10.7585 3.42289C10.3749 2.4641 9.57104 1.77961 8.62611 1.5684C7.7669 1.37635 6.8197 1.58156 5.99976 2.27478C5.17982 1.58156 4.23262 1.37635 3.37341 1.5684C2.42848 1.77961 1.62462 2.46411 1.24104 3.4229C0.456646 5.38358 1.45621 8.25234 5.8161 10.702C5.93017 10.7661 6.06941 10.7661 6.18348 10.702Z"
+                        fill="#F8F8F8" fill-opacity="0.95" />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+
+            <!-- noti contents -->
+            <div class="flex flex-grow flex-col gap-3">
+              <div class="">
+                <h6 class="line-clamp-2 text-sm text-[#828282] opacity-80">
+                  <span class="font-bold text-text-prime">Kohaku </span>
+                  liked your post
+                </h6>
+                <p class="text-sm text-text-prime truncate">
+                  SimpleList link.com/media.png
+                </p>
+              </div>
+              <p class="font-rubik text-sm text-text-tertiary">3h ago</p>
+            </div>
+            <!--  -->
+          </li>
+          <!--  -->
+
+          <!-- #2 -->
+          <!-- Noti List item  -->
+          <li class="bg-neutral2-2 rounded-[20px] p-3 flex gap-2.5 items-start self-stretch">
+            <!-- circle avatar -->
+            <div class="relative">
+              <div class="h-11 w-11">
+                <img src="../public/img/avatar-5.png" alt="" class="h-full w-full rounded-full object-cover" />
+              </div>
+              <div class="absolute -bottom-1 -right-1 rounded-full p-0.5 bg-[#313131]">
+                <div class="p-[5px] bg-[#BD3027] rounded-full">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="heart" opacity="0.8">
+                      <path id="heart-icon"
+                        d="M6.18348 10.702C10.5433 8.25233 11.5429 5.38357 10.7585 3.42289C10.3749 2.4641 9.57104 1.77961 8.62611 1.5684C7.7669 1.37635 6.8197 1.58156 5.99976 2.27478C5.17982 1.58156 4.23262 1.37635 3.37341 1.5684C2.42848 1.77961 1.62462 2.46411 1.24104 3.4229C0.456646 5.38358 1.45621 8.25234 5.8161 10.702C5.93017 10.7661 6.06941 10.7661 6.18348 10.702Z"
+                        fill="#F8F8F8" fill-opacity="0.95" />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+
+            <!-- noti contents -->
+            <div class="flex flex-grow flex-col gap-3">
+              <div class="">
+                <h6 class="line-clamp-2 text-sm text-[#828282] opacity-80">
+                  <span class="font-bold text-text-prime">Kohaku </span>
+                  liked your post
+                </h6>
+                <p class="text-sm text-text-prime truncate">
+                  SimpleList link.com/media.png
+                </p>
+              </div>
+              <p class="font-rubik text-sm text-text-tertiary">3h ago</p>
+            </div>
+            <!--  -->
+          </li>
+          <!--  -->
+        </ul>
+
+        <!-- Replies -->
+        <ul id="content-replies" class="tab-content hidden overflow-auto no-scrollbar flex-grow gap-2 flex-col mb-40">
+          <!-- #1 -->
+          <!-- Noti List item  -->
+          <li class="bg-neutral2-2 rounded-[20px] p-3 flex gap-2.5 items-start self-stretch">
+            <!-- circle avatar -->
+            <div class="relative">
+              <div class="h-11 w-11">
+                <img src="../public/img/avatar-1.png" alt="" class="h-full w-full rounded-full object-cover" />
+              </div>
+              <div class="absolute -bottom-1 -right-1 rounded-full p-0.5 bg-[#313131]">
+                <div class="p-[5px] bg-[#8B33E2] rounded-full">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="heart" opacity="0.8">
+                      <path id="heart-icon" d="M6 1.875V6M6 6V10.125M6 6H1.875M6 6H10.125" stroke="#F8F8F8"
+                        stroke-opacity="0.95" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+
+            <!-- noti contents -->
+            <div class="flex flex-grow flex-col gap-3">
+              <div class="">
+                <h6 class="line-clamp-2 font-bold text-sm opacity-80 text-text-prime">
+                  Kohaku, Moyo Shiro, Dash and 2 others follow you
+                </h6>
+                <p class="text-sm text-[#828282] opacity-80">follow you</p>
+              </div>
+              <p class="font-rubik text-sm text-text-tertiary">3h ago</p>
+            </div>
+            <!--  -->
+          </li>
+          <!--  -->
+
+          <!-- #2 -->
+          <!-- Noti List item  -->
+          <li class="bg-neutral2-2 rounded-[20px] p-3 flex gap-2.5 items-start self-stretch">
+            <!-- circle avatar -->
+            <div class="relative">
+              <div class="h-11 w-11">
+                <img src="../public/img/avatar-3.png" alt="" class="h-full w-full rounded-full object-cover" />
+              </div>
+              <div class="absolute -bottom-1 -right-1 rounded-full p-0.5 bg-[#313131]">
+                <div class="p-[5px] bg-[#21B27E] rounded-full">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="heart" opacity="0.8">
+                      <path id="heart-icon"
+                        d="M2.375 6.625V5.875C2.375 4.21815 3.71815 2.875 5.375 2.875H7.55357M6.32286 1.375L7.87643 2.875L6.32286 4.375M9.625 5.375V6.125C9.625 7.78185 8.28185 9.125 6.625 9.125H4.44643M5.67714 10.625L4.12357 9.125L5.67714 7.625"
+                        stroke="#F8F8F8" stroke-opacity="0.95" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+
+            <!-- noti contents -->
+            <div class="flex flex-grow flex-col gap-3">
+              <div class="">
+                <h6 class="line-clamp-2 text-sm text-[#828282] opacity-80">
+                  <span class="font-bold text-text-prime">Kohaku </span>
+                  reported your post
+                </h6>
+                <p class="text-sm text-text-prime truncate">
+                  SimpleList link.com/media.png
+                </p>
+              </div>
+              <p class="font-rubik text-sm text-text-tertiary">3h ago</p>
+            </div>
+            <!--  -->
+          </li>
+          <!--  -->
+
+          <!-- #3 -->
+          <!-- Noti List item  -->
+          <li class="bg-neutral2-2 rounded-[20px] p-3 flex gap-2.5 items-start self-stretch">
+            <!-- circle avatar -->
+            <div class="relative">
+              <div class="h-11 w-11">
+                <img src="../public/img/avatar-4.png" alt="" class="h-full w-full rounded-full object-cover" />
+              </div>
+              <div class="absolute -bottom-1 -right-1 rounded-full p-0.5 bg-[#313131]">
+                <div class="p-[5px] bg-[#8B33E2] rounded-full">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="heart" opacity="0.8">
+                      <path id="heart-icon" d="M6 1.875V6M6 6V10.125M6 6H1.875M6 6H10.125" stroke="#F8F8F8"
+                        stroke-opacity="0.95" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+
+            <!-- noti contents -->
+            <div class="flex flex-grow flex-col gap-3">
+              <div class="">
+                <h6 class="line-clamp-2 text-sm text-[#828282] opacity-80">
+                  <span class="font-bold text-text-prime">Kohaku </span>
+                  commented on your post
+                </h6>
+                <p class="text-sm text-text-prime line-clamp-2">
+                  Always amazed with how you present your work. Love it so
+                  much
+                </p>
+              </div>
+              <p class="font-rubik text-sm text-text-tertiary">3h ago</p>
+            </div>
+            <!--  -->
+          </li>
+          <!--  -->
+
+          <!-- #4 -->
+          <!-- Noti List item  -->
+          <li class="bg-neutral2-2 rounded-[20px] p-3 flex gap-2.5 items-start self-stretch">
+            <!-- circle avatar -->
+            <div class="relative">
+              <div class="h-11 w-11">
+                <img src="../public/img/avatar-6.png" alt="" class="h-full w-full rounded-full object-cover" />
+              </div>
+              <div class="absolute -bottom-1 -right-1 rounded-full p-0.5 bg-[#313131]">
+                <div class="p-[5px] bg-[#8B33E2] rounded-full">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="heart" opacity="0.8">
+                      <path id="heart-icon" d="M6 1.875V6M6 6V10.125M6 6H1.875M6 6H10.125" stroke="#F8F8F8"
+                        stroke-opacity="0.95" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+
+            <!-- noti contents -->
+            <div class="flex flex-grow flex-col gap-3">
+              <div class="">
+                <h6 class="line-clamp-2 font-bold text-sm opacity-80 text-text-prime">
+                  Kohaku, Moyo Shiro, Dash and 2 others follow you
+                </h6>
+                <p class="text-sm text-[#828282] opacity-80">follow you</p>
+              </div>
+              <p class="font-rubik text-sm text-text-tertiary">3h ago</p>
+            </div>
+            <!--  -->
+          </li>
+          <!--  -->
+        </ul>
+        <!--  -->
+        <!-- Follows -->
+        <ul id="content-follows" class="tab-content hidden overflow-auto no-scrollbar flex-grow gap-2 flex-col mb-40">
+          <!-- #1 -->
+          <!-- Noti List item  -->
+          <li class="bg-neutral2-2 rounded-[20px] p-3 flex gap-2.5 items-start self-stretch">
+            <!-- circle avatar -->
+            <div class="relative">
+              <div class="h-11 w-11">
+                <img src="../public/img/avatar-2.png" alt="" class="h-full w-full rounded-full object-cover" />
+              </div>
+              <div class="absolute -bottom-1 -right-1 rounded-full p-0.5 bg-[#313131]">
+                <div class="p-[5px] bg-[#BD3027] rounded-full">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="heart" opacity="0.8">
+                      <path id="heart-icon"
+                        d="M6.18348 10.702C10.5433 8.25233 11.5429 5.38357 10.7585 3.42289C10.3749 2.4641 9.57104 1.77961 8.62611 1.5684C7.7669 1.37635 6.8197 1.58156 5.99976 2.27478C5.17982 1.58156 4.23262 1.37635 3.37341 1.5684C2.42848 1.77961 1.62462 2.46411 1.24104 3.4229C0.456646 5.38358 1.45621 8.25234 5.8161 10.702C5.93017 10.7661 6.06941 10.7661 6.18348 10.702Z"
+                        fill="#F8F8F8" fill-opacity="0.95" />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+
+            <!-- noti contents -->
+            <div class="flex flex-grow flex-col gap-3">
+              <div class="">
+                <h6 class="line-clamp-2 text-sm text-[#828282] opacity-80">
+                  <span class="font-bold text-text-prime">Kohaku </span>
+                  liked your post
+                </h6>
+                <p class="text-sm text-text-prime truncate">
+                  SimpleList link.com/media.png
+                </p>
+              </div>
+              <p class="font-rubik text-sm text-text-tertiary">3h ago</p>
+            </div>
+            <!--  -->
+          </li>
+          <!--  -->
+
+          <!-- #2 -->
+          <!-- Noti List item  -->
+          <li class="bg-neutral2-2 rounded-[20px] p-3 flex gap-2.5 items-start self-stretch">
+            <!-- circle avatar -->
+            <div class="relative">
+              <div class="h-11 w-11">
+                <img src="../public/img/avatar-5.png" alt="" class="h-full w-full rounded-full object-cover" />
+              </div>
+              <div class="absolute -bottom-1 -right-1 rounded-full p-0.5 bg-[#313131]">
+                <div class="p-[5px] bg-[#BD3027] rounded-full">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="heart" opacity="0.8">
+                      <path id="heart-icon"
+                        d="M6.18348 10.702C10.5433 8.25233 11.5429 5.38357 10.7585 3.42289C10.3749 2.4641 9.57104 1.77961 8.62611 1.5684C7.7669 1.37635 6.8197 1.58156 5.99976 2.27478C5.17982 1.58156 4.23262 1.37635 3.37341 1.5684C2.42848 1.77961 1.62462 2.46411 1.24104 3.4229C0.456646 5.38358 1.45621 8.25234 5.8161 10.702C5.93017 10.7661 6.06941 10.7661 6.18348 10.702Z"
+                        fill="#F8F8F8" fill-opacity="0.95" />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+
+            <!-- noti contents -->
+            <div class="flex flex-grow flex-col gap-3">
+              <div class="">
+                <h6 class="line-clamp-2 text-sm text-[#828282] opacity-80">
+                  <span class="font-bold text-text-prime">Kohaku </span>
+                  liked your post
+                </h6>
+                <p class="text-sm text-text-prime truncate">
+                  SimpleList link.com/media.png
+                </p>
+              </div>
+              <p class="font-rubik text-sm text-text-tertiary">3h ago</p>
+            </div>
+            <!--  -->
+          </li>
+          <!--  -->
+        </ul>
+      </div>
+    </section>
+    <!--  -->
+    <!-- side widget -->
+    <section id="recommend-container"
+      class="hidden bg-neutral-38 h-svh fixed top-0 right-0 lg:flex flex-col p-3 gap-3 md:min-w-[21.25rem] md:max-w-[21.25rem] xl:max-w-[30rem] xl:min-w-[30rem] transition-all duration-[0.5s]">
+      <div id="toggle-group" class="w-full p-1 flex justify-between items-center bg-neutral-36 rounded-[100px]">
+        <button class="toggle-item flex-1 px-6 py-2 text-text-secondary text-sm font-semibold active-toggle">
+          Who to follow
+        </button>
+        <button class="toggle-item flex-1 px-6 py-2 text-text-secondary text-sm font-semibold">
+          Trending topics
+        </button>
+      </div>
+      <div id="list-profile-container" class="flex flex-col gap-2">
+        <div class="profile-card bg-neutral-22 rounded-[1.25rem] p-3 flex flex-col gap-3">
+          <div class="profile-info flex items-end gap-3">
+            <div id="avatar-user" class="relative">
+              <div
+                class="absolute size-[1.25rem] -left-1 -top-1 rounded-full bg-[#F8F8F8] border-[3px] border-[#323232]">
+              </div>
+
+              <img src="https://i.pinimg.com/originals/d3/6f/ef/d36fef4f4885354afcfd3753dee95741.jpg" alt="avatar"
+                class="rounded-full min-w-[44px] size-[44px]" />
+            </div>
+            <div class="profile-content grow flex flex-col gap-2">
+              <span class="text-text-primary text-sm font-medium">Moyo Shiro</span>
+              <span class="text-text-light text-xs font-normal">@moyo_shiro</span>
+            </div>
+
+            <button class="btn-add hidden md:block bg-button rounded-full p-[10px]">
+              <img src="../public/svg/ic_add.svg" alt="icon add" class="size-[24px]" />
+            </button>
+          </div>
+          <div class="profile-desc">
+            <span class="text-text-light text-sm/6 line-clamp-2 pl-[56px] opacity-80">I design digital products and
+              ventures.</span>
+          </div>
+        </div>
+        <div class="profile-card bg-neutral-22 rounded-[1.25rem] p-3 flex flex-col gap-3">
+          <div class="profile-info flex items-end gap-3">
+            <div id="avatar-user" class="relative">
+              <div
+                class="absolute size-[1.25rem] -left-1 -top-1 rounded-full bg-[#F8F8F8] border-[3px] border-[#323232]">
+              </div>
+
+              <img src="https://i.pinimg.com/originals/d3/6f/ef/d36fef4f4885354afcfd3753dee95741.jpg" alt="avatar"
+                class="rounded-full min-w-[44px] size-[44px]" />
+            </div>
+            <div class="profile-content grow flex flex-col gap-2">
+              <span class="text-text-primary text-sm font-medium">Moyo Shiro</span>
+              <span class="text-text-light text-xs font-normal">@moyo_shiro</span>
+            </div>
+
+            <button class="btn-add hidden md:block bg-button rounded-full p-[10px] bg-neutral-21">
+              <img src="../public/svg/ic_check.svg" alt="icon check" class="size-[24px]" />
+            </button>
+          </div>
+          <div class="profile-desc">
+            <span class="text-text-light text-sm/6 line-clamp-2 pl-[56px] opacity-80">I design digital products and
+              ventures.</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="list-trending-topic" class="flex flex-col gap-2">
+        <div class="trending-topic-card relative bg-neutral-22 rounded-[1.25rem] p-3 flex items-center gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            class="absolute top-[0.5rem] right-[0.5rem]">
+            <circle cx="12" cy="12" r="6" fill="#55F08B" />
+          </svg>
+          <img src="https://i.pinimg.com/originals/a4/72/10/a47210899e2f804d4f4aead44adaefe0.jpg"
+            alt="trending thumbnail"
+            class="min-w-[7rem] max-h-[6rem] rounded-[0.5rem] object-cover row-span-2 items-center" />
+          <div class="flex flex-col gap-3">
+            <span class="base text-sm font-semibold text-text-primary col-span-2 opacity-80 mr-6">Apple Releases iOS
+              17.6.1 with Advanced Data Protection
+              Fix</span>
+            <div class="flex items-center justify-start gap-3">
+              <div id="avatar-user-group" class="flex w-fit justify-start items-start">
+                <img src="https://i.pinimg.com/originals/d3/6f/ef/d36fef4f4885354afcfd3753dee95741.jpg" alt="Avatar 3"
+                  class="border-[#2e2e2e] border-[0.0625rem] size-[1.25rem] object-cover rounded-full" />
+                <img src="https://i.pinimg.com/originals/4a/7e/74/4a7e7438c14c2807c81cba4a99e4cec2.jpg" alt="Avatar 5"
+                  class="border-[#2e2e2e] border-[0.0625rem] size-[1.25rem] ml-[-0.275rem] object-cover rounded-full" />
+                <img src="https://i.pinimg.com/originals/14/ab/f1/14abf1f58ea5686cf9e24ec22a099892.jpg" alt="Avatar 9"
+                  class="border-[#2e2e2e] border-[0.0625rem] size-[1.25rem] ml-[-0.275rem] object-cover rounded-full" />
+              </div>
+              <span class="caption text-xs opacity-45">4 hours ago</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="trending-topic-card relative bg-neutral-22 rounded-[1.25rem] p-3 flex items-center gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            class="hidden absolute top-[0.5rem] right-[0.5rem]">
+            <circle cx="12" cy="12" r="6" fill="#55F08B" />
+          </svg>
+          <img src="https://i.pinimg.com/originals/a4/72/10/a47210899e2f804d4f4aead44adaefe0.jpg"
+            alt="trending thumbnail"
+            class="min-w-[7rem] max-h-[6rem] rounded-[0.5rem] object-cover row-span-2 items-center" />
+          <div class="flex flex-col gap-3">
+            <span class="base text-sm font-semibold text-text-primary col-span-2 opacity-80 mr-6">Apple Releases iOS
+              17.6.1 with Advanced Data Protection
+              Fix</span>
+            <div class="flex items-center justify-start gap-3">
+              <div id="avatar-user-group" class="flex w-fit justify-start items-start">
+                <img src="https://i.pinimg.com/originals/d3/6f/ef/d36fef4f4885354afcfd3753dee95741.jpg" alt="Avatar 3"
+                  class="border-[#2e2e2e] border-[0.0625rem] size-[1.25rem] object-cover rounded-full" />
+                <img src="https://i.pinimg.com/originals/4a/7e/74/4a7e7438c14c2807c81cba4a99e4cec2.jpg" alt="Avatar 5"
+                  class="border-[#2e2e2e] border-[0.0625rem] size-[1.25rem] ml-[-0.275rem] object-cover rounded-full" />
+                <img src="https://i.pinimg.com/originals/14/ab/f1/14abf1f58ea5686cf9e24ec22a099892.jpg" alt="Avatar 9"
+                  class="border-[#2e2e2e] border-[0.0625rem] size-[1.25rem] ml-[-0.275rem] object-cover rounded-full" />
+              </div>
+              <span class="caption text-xs opacity-45">4 hours ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="avatar-user-group" class="relative flex w-full justify-center">
+        <img src="https://i.pinimg.com/originals/d3/6f/ef/d36fef4f4885354afcfd3753dee95741.jpg" alt="Avatar 3"
+          class="border-[#2e2e2e] border-[2px] size-[2rem] object-cover rounded-full" />
+        <img src="https://i.pinimg.com/originals/4a/7e/74/4a7e7438c14c2807c81cba4a99e4cec2.jpg" alt="Avatar 5"
+          class="border-[#2e2e2e] border-[2px] size-[2rem] ml-[-11px] object-cover rounded-full" />
+        <img src="https://i.pinimg.com/originals/14/ab/f1/14abf1f58ea5686cf9e24ec22a099892.jpg" alt="Avatar 9"
+          class="border-[#2e2e2e] border-[2px] size-[2rem] ml-[-11px] object-cover rounded-full" />
+        <div
+          class="ml-[-11px] rounded-[1.25rem] border-[#2e2e2e] border-[2px] bg-neutral-25 px-3 py-1.5 base text-sm text-text-secondary font-semibold backdrop-blur-[16px]">
+          1,234+
+        </div>
+      </div>
+    </section>
+    <!--  -->
+    <!-- Bottom Modal -->
+    <div class="hidden absolute bottom-4 w-full md:hidden">
+      <div
+        class="gd w-fit mx-auto relative p-[1px] bg-background rounded-[20px] before:content-[''] before:absolute before:inset-0 before:opacity-25 before:bg-linear-card before:z-10 before:rounded-[20px] after:content-[''] after:absolute after:inset-[1px] after:z-10 after:[1px] after:bg-[#313131] after:rounded-[19px] after:backdrop-blur-50 after:shadow-card">
+        <div class="rounded-[19px] relative z-20 p-2 gap-4 bg-background flex justify-center items-center h-fit w-fit">
+          <!-- home icon -->
+          <a href="./home.html">
+            <div
+              class="p-2.5 flex items-center justify-center rounded-xl backdrop-blur-16 bg-neutral1-0 fill-text-tertiary hover:fill-text-second">
+              <svg class="fill-inherit" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <g opacity="0.8">
+                  <path
+                    d="M8.96046 3.73669L9.43539 4.31716L8.96046 3.73669ZM11.1874 2.23812L11.3906 2.96009L11.1874 2.23812ZM15.0395 3.73669L15.5145 3.15622H15.5145L15.0395 3.73669ZM12.8126 2.23812L12.6094 2.96009L12.8126 2.23812ZM5.38803 19.9228L5.04754 20.5911L5.38803 19.9228ZM3.75 15.4498H4.5H3.75ZM4.07698 18.6118L3.40873 18.9523L4.07698 18.6118ZM19.923 18.6118L20.5913 18.9523L19.923 18.6118ZM18.612 19.9228L18.9525 20.5911L18.612 19.9228ZM20.1449 8.6342L19.4212 8.83101L20.1449 8.6342ZM18.4895 6.55942L18.0146 7.13989L18.0146 7.13989L18.4895 6.55942ZM19.6924 7.67943L19.0818 8.11493L19.6924 7.67943ZM3.75 10.2744H3H3.75ZM3.85513 8.6342L4.57885 8.83101L3.85513 8.6342ZM5.51046 6.55942L5.98539 7.13989L5.51046 6.55942ZM4.30757 7.67943L4.91818 8.11493L4.30757 7.67943ZM7.75 15.4998C7.33579 15.4998 7 15.8356 7 16.2498C7 16.664 7.33579 16.9998 7.75 16.9998V15.4998ZM16.25 16.9998C16.6642 16.9998 17 16.664 17 16.2498C17 15.8356 16.6642 15.4998 16.25 15.4998V16.9998ZM19.5 10.2744V15.4498H21V10.2744H19.5ZM15.45 19.4998H8.55V20.9998H15.45V19.4998ZM4.5 15.4498V10.2744H3V15.4498H4.5ZM5.98539 7.13989L9.43539 4.31716L8.48553 3.15622L5.03553 5.97895L5.98539 7.13989ZM14.5646 4.31716L18.0146 7.13989L18.9645 5.97895L15.5145 3.15622L14.5646 4.31716ZM9.43539 4.31716C9.98538 3.86717 10.3667 3.5558 10.6847 3.33278C10.9949 3.11519 11.2023 3.01305 11.3906 2.96009L10.9843 1.51616C10.5699 1.63276 10.2052 1.8369 9.82339 2.10471C9.44929 2.36708 9.01843 2.72021 8.48553 3.15622L9.43539 4.31716ZM15.5145 3.15622C14.9816 2.72021 14.5507 2.36708 14.1766 2.10471C13.7948 1.8369 13.4301 1.63276 13.0157 1.51616L12.6094 2.96009C12.7977 3.01305 13.0051 3.11519 13.3153 3.33278C13.6333 3.55581 14.0146 3.86717 14.5646 4.31716L15.5145 3.15622ZM11.3906 2.96009C11.7891 2.84794 12.2109 2.84794 12.6094 2.96009L13.0157 1.51616C12.3515 1.32925 11.6485 1.32925 10.9843 1.51616L11.3906 2.96009ZM8.55 19.4998C7.69755 19.4998 7.10331 19.4992 6.64068 19.4614C6.1868 19.4243 5.92604 19.3552 5.72852 19.2546L5.04754 20.5911C5.49175 20.8174 5.97189 20.9118 6.51853 20.9564C7.05641 21.0004 7.7223 20.9998 8.55 20.9998V19.4998ZM3 15.4498C3 16.2775 2.99942 16.9434 3.04336 17.4813C3.08803 18.0279 3.18238 18.508 3.40873 18.9523L4.74524 18.2713C4.6446 18.0738 4.57546 17.813 4.53838 17.3591C4.50058 16.8965 4.5 16.3022 4.5 15.4498H3ZM5.72852 19.2546C5.30516 19.0388 4.96095 18.6946 4.74524 18.2713L3.40873 18.9523C3.76825 19.6579 4.34193 20.2315 5.04754 20.5911L5.72852 19.2546ZM19.5 15.4498C19.5 16.3022 19.4994 16.8965 19.4616 17.3591C19.4245 17.813 19.3554 18.0738 19.2548 18.2713L20.5913 18.9523C20.8176 18.508 20.912 18.0279 20.9566 17.4813C21.0006 16.9434 21 16.2775 21 15.4498H19.5ZM15.45 20.9998C16.2777 20.9998 16.9436 21.0004 17.4815 20.9564C18.0281 20.9118 18.5082 20.8174 18.9525 20.5911L18.2715 19.2546C18.074 19.3552 17.8132 19.4243 17.3593 19.4614C16.8967 19.4992 16.3025 19.4998 15.45 19.4998V20.9998ZM19.2548 18.2713C19.039 18.6946 18.6948 19.0388 18.2715 19.2546L18.9525 20.5911C19.6581 20.2315 20.2317 19.6579 20.5913 18.9523L19.2548 18.2713ZM21 10.2744C21 9.47976 21.0062 8.94327 20.8686 8.43739L19.4212 8.83101C19.4938 9.09831 19.5 9.39758 19.5 10.2744H21ZM18.0146 7.13989C18.6932 7.69513 18.921 7.8894 19.0818 8.11493L20.303 7.24393C19.9986 6.81711 19.5795 6.48216 18.9645 5.97895L18.0146 7.13989ZM20.8686 8.43739C20.7522 8.00924 20.5607 7.60516 20.303 7.24393L19.0818 8.11493C19.2364 8.33167 19.3513 8.57412 19.4212 8.83101L20.8686 8.43739ZM4.5 10.2744C4.5 9.39758 4.50616 9.09831 4.57885 8.83101L3.13141 8.43739C2.99384 8.94327 3 9.47976 3 10.2744H4.5ZM5.03553 5.97895C4.4205 6.48216 4.00139 6.81711 3.69697 7.24393L4.91818 8.11493C5.07903 7.8894 5.30675 7.69513 5.98539 7.13989L5.03553 5.97895ZM4.57885 8.83101C4.64871 8.57412 4.7636 8.33167 4.91818 8.11493L3.69697 7.24393C3.43933 7.60516 3.24784 8.00925 3.13141 8.43739L4.57885 8.83101ZM7.75 16.9998H16.25V15.4998H7.75V16.9998Z" />
+                </g>
+              </svg>
+            </div>
+          </a>
+          <!-- tim icon | Primary -->
+          <a href="#">
+            <div
+              class="gd relative p-[1px] bg-neutral2-10 rounded-xl before:content-[''] before:absolute before:inset-0 before:opacity-25 before:bg-linear-card before:z-10 before:rounded-xl after:content-[''] after:absolute after:inset-[1px] after:z-10 after:[1px] after:bg-[#313131] after:rounded-[11px] after:backdrop-blur-16">
+              <div class="p-2.5 rounded-[11px] bg-neutral2-10 relative z-30">
+                <div class="absolute z-20 top-[1px] right-[1px]">
+                  <div
+                    class="gd relative p-[1px] bg-linear-red rounded-full before:content-[''] before:absolute before:inset-0 before:opacity-25 before:bg-linear-card before:rounded-full">
+                    <div
+                      class="rounded-full p-1 bg-linear-red h-5 w-5 flex items-center justify-center shadow-button backdrop-blur-16">
+                      <span class="small-sm"> 12 </span>
+                    </div>
+                  </div>
+                </div>
+
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="heart 2, like, health, life, fav" opacity="0.8">
+                    <path id="Icon"
+                      d="M12 5.57193C18.3331 -0.86765 29.1898 11.0916 12 20.75C-5.18982 11.0916 5.66687 -0.867651 12 5.57193Z"
+                      stroke="#F8F8F8" stroke-opacity="0.95" stroke-width="1.5" stroke-linejoin="round" />
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </a>
+          <!-- mess icon -->
+          <a href="./message.html">
+            <div
+              class="p-2.5 flex items-center justify-center rounded-xl backdrop-blur-16 bg-neutral1-0 stroke-text-tertiary hover:stroke-text-second">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="bubble 7 text, message" opacity="0.8">
+                  <path id="Icon"
+                    d="M15.25 9.75H8.75M12.25 14.25H8.75M2.75 20.25H16.25C19.0114 20.25 21.25 18.0114 21.25 15.25V8.75C21.25 5.98858 19.0114 3.75 16.25 3.75H7.75C4.98858 3.75 2.75 5.98858 2.75 8.75V20.25Z"
+                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+              </svg>
+            </div>
+          </a>
+          <!-- tag item -->
+          <a href="./bookmark.html">
+            <div
+              class="p-2.5 flex items-center justify-center rounded-xl backdrop-blur-16 bg-neutral1-0 stroke-text-tertiary hover:stroke-text-second">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="bookmark, banner, flag, tag" opacity="0.8">
+                  <path id="Icon"
+                    d="M19.25 20.2515V5.75C19.25 4.09315 17.9069 2.75 16.25 2.75H7.75C6.09315 2.75 4.75 4.09315 4.75 5.75V20.2515C4.75 21.0522 5.64414 21.5281 6.30839 21.081L10.3248 18.3776C11.3376 17.6959 12.6624 17.6959 13.6752 18.3776L17.6916 21.081C18.3559 21.5282 19.25 21.0522 19.25 20.2515Z"
+                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+              </svg>
+            </div>
+          </a>
+          <!-- game icon -->
+          <a href="./explore.html">
+            <div
+              class="p-2.5 group flex items-center justify-center rounded-xl backdrop-blur-16 bg-neutral1-0 fill-text-tertiary hover:fill-text-second">
+              <svg class="fill-inherit" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <g id="icon, icons, shapes, games" opacity="0.8">
+                  <path id="Icon"
+                    d="M7.75 3.75C7.75 3.33579 7.41421 3 7 3C6.58579 3 6.25 3.33579 6.25 3.75H7.75ZM6.25 10.25C6.25 10.6642 6.58579 11 7 11C7.41421 11 7.75 10.6642 7.75 10.25H6.25ZM3.75 6.25C3.33579 6.25 3 6.58579 3 7C3 7.41421 3.33579 7.75 3.75 7.75V6.25ZM10.25 7.75C10.6642 7.75 11 7.41421 11 7C11 6.58579 10.6642 6.25 10.25 6.25V7.75ZM19.8284 15.2322C20.1213 14.9393 20.1213 14.4645 19.8284 14.1716C19.5355 13.8787 19.0607 13.8787 18.7678 14.1716L19.8284 15.2322ZM14.1716 18.7678C13.8787 19.0607 13.8787 19.5355 14.1716 19.8284C14.4645 20.1213 14.9393 20.1213 15.2322 19.8284L14.1716 18.7678ZM15.2322 14.1716C14.9393 13.8787 14.4645 13.8787 14.1716 14.1716C13.8787 14.4645 13.8787 14.9393 14.1716 15.2322L15.2322 14.1716ZM18.7678 19.8284C19.0607 20.1213 19.5355 20.1213 19.8284 19.8284C20.1213 19.5355 20.1213 19.0607 19.8284 18.7678L18.7678 19.8284ZM17 9.5C15.6193 9.5 14.5 8.38071 14.5 7H13C13 9.20914 14.7909 11 17 11V9.5ZM19.5 7C19.5 8.38071 18.3807 9.5 17 9.5V11C19.2091 11 21 9.20914 21 7H19.5ZM17 4.5C18.3807 4.5 19.5 5.61929 19.5 7H21C21 4.79086 19.2091 3 17 3V4.5ZM17 3C14.7909 3 13 4.79086 13 7H14.5C14.5 5.61929 15.6193 4.5 17 4.5V3ZM6.25 3.75V7H7.75V3.75H6.25ZM6.25 7V10.25H7.75V7H6.25ZM3.75 7.75H7V6.25H3.75V7.75ZM7 7.75H10.25V6.25H7V7.75ZM18.7678 14.1716L16.4697 16.4697L17.5303 17.5303L19.8284 15.2322L18.7678 14.1716ZM16.4697 16.4697L14.1716 18.7678L15.2322 19.8284L17.5303 17.5303L16.4697 16.4697ZM14.1716 15.2322L16.4697 17.5303L17.5303 16.4697L15.2322 14.1716L14.1716 15.2322ZM16.4697 17.5303L18.7678 19.8284L19.8284 18.7678L17.5303 16.4697L16.4697 17.5303ZM5.25 14.5H8.75V13H5.25V14.5ZM9.5 15.25V18.75H11V15.25H9.5ZM8.75 19.5H5.25V21H8.75V19.5ZM4.5 18.75V15.25H3V18.75H4.5ZM5.25 19.5C4.83579 19.5 4.5 19.1642 4.5 18.75H3C3 19.9926 4.00736 21 5.25 21V19.5ZM9.5 18.75C9.5 19.1642 9.16421 19.5 8.75 19.5V21C9.99264 21 11 19.9926 11 18.75H9.5ZM8.75 14.5C9.16421 14.5 9.5 14.8358 9.5 15.25H11C11 14.0074 9.99264 13 8.75 13V14.5ZM5.25 13C4.00736 13 3 14.0074 3 15.25H4.5C4.5 14.8358 4.83579 14.5 5.25 14.5V13Z" />
+                </g>
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Transpanrent Modal -->
+    <div class="absolute bottom-4 w-full md:hidden">
+      <div
+        class="w-fit mx-auto relative p-[1px] bg-background rounded-[20px] before:content-[''] before:absolute before:inset-0 before:opacity-35 before:bg-linear-card before:z-10 before:rounded-[20px]">
+        <div
+          class="rounded-[19px] relative z-20 p-2 gap-4 flex justify-center items-center h-fit w-fit backdrop-blur-50 shadow-card">
+          <!-- home icon -->
+          <a href="./home.html">
+            <div
+              class="p-2.5 flex items-center justify-center rounded-xl backdrop-blur-16 bg-neutral1-0 fill-text-tertiary hover:fill-text-second">
+              <svg class="fill-inherit" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <g opacity="0.8">
+                  <path
+                    d="M8.96046 3.73669L9.43539 4.31716L8.96046 3.73669ZM11.1874 2.23812L11.3906 2.96009L11.1874 2.23812ZM15.0395 3.73669L15.5145 3.15622H15.5145L15.0395 3.73669ZM12.8126 2.23812L12.6094 2.96009L12.8126 2.23812ZM5.38803 19.9228L5.04754 20.5911L5.38803 19.9228ZM3.75 15.4498H4.5H3.75ZM4.07698 18.6118L3.40873 18.9523L4.07698 18.6118ZM19.923 18.6118L20.5913 18.9523L19.923 18.6118ZM18.612 19.9228L18.9525 20.5911L18.612 19.9228ZM20.1449 8.6342L19.4212 8.83101L20.1449 8.6342ZM18.4895 6.55942L18.0146 7.13989L18.0146 7.13989L18.4895 6.55942ZM19.6924 7.67943L19.0818 8.11493L19.6924 7.67943ZM3.75 10.2744H3H3.75ZM3.85513 8.6342L4.57885 8.83101L3.85513 8.6342ZM5.51046 6.55942L5.98539 7.13989L5.51046 6.55942ZM4.30757 7.67943L4.91818 8.11493L4.30757 7.67943ZM7.75 15.4998C7.33579 15.4998 7 15.8356 7 16.2498C7 16.664 7.33579 16.9998 7.75 16.9998V15.4998ZM16.25 16.9998C16.6642 16.9998 17 16.664 17 16.2498C17 15.8356 16.6642 15.4998 16.25 15.4998V16.9998ZM19.5 10.2744V15.4498H21V10.2744H19.5ZM15.45 19.4998H8.55V20.9998H15.45V19.4998ZM4.5 15.4498V10.2744H3V15.4498H4.5ZM5.98539 7.13989L9.43539 4.31716L8.48553 3.15622L5.03553 5.97895L5.98539 7.13989ZM14.5646 4.31716L18.0146 7.13989L18.9645 5.97895L15.5145 3.15622L14.5646 4.31716ZM9.43539 4.31716C9.98538 3.86717 10.3667 3.5558 10.6847 3.33278C10.9949 3.11519 11.2023 3.01305 11.3906 2.96009L10.9843 1.51616C10.5699 1.63276 10.2052 1.8369 9.82339 2.10471C9.44929 2.36708 9.01843 2.72021 8.48553 3.15622L9.43539 4.31716ZM15.5145 3.15622C14.9816 2.72021 14.5507 2.36708 14.1766 2.10471C13.7948 1.8369 13.4301 1.63276 13.0157 1.51616L12.6094 2.96009C12.7977 3.01305 13.0051 3.11519 13.3153 3.33278C13.6333 3.55581 14.0146 3.86717 14.5646 4.31716L15.5145 3.15622ZM11.3906 2.96009C11.7891 2.84794 12.2109 2.84794 12.6094 2.96009L13.0157 1.51616C12.3515 1.32925 11.6485 1.32925 10.9843 1.51616L11.3906 2.96009ZM8.55 19.4998C7.69755 19.4998 7.10331 19.4992 6.64068 19.4614C6.1868 19.4243 5.92604 19.3552 5.72852 19.2546L5.04754 20.5911C5.49175 20.8174 5.97189 20.9118 6.51853 20.9564C7.05641 21.0004 7.7223 20.9998 8.55 20.9998V19.4998ZM3 15.4498C3 16.2775 2.99942 16.9434 3.04336 17.4813C3.08803 18.0279 3.18238 18.508 3.40873 18.9523L4.74524 18.2713C4.6446 18.0738 4.57546 17.813 4.53838 17.3591C4.50058 16.8965 4.5 16.3022 4.5 15.4498H3ZM5.72852 19.2546C5.30516 19.0388 4.96095 18.6946 4.74524 18.2713L3.40873 18.9523C3.76825 19.6579 4.34193 20.2315 5.04754 20.5911L5.72852 19.2546ZM19.5 15.4498C19.5 16.3022 19.4994 16.8965 19.4616 17.3591C19.4245 17.813 19.3554 18.0738 19.2548 18.2713L20.5913 18.9523C20.8176 18.508 20.912 18.0279 20.9566 17.4813C21.0006 16.9434 21 16.2775 21 15.4498H19.5ZM15.45 20.9998C16.2777 20.9998 16.9436 21.0004 17.4815 20.9564C18.0281 20.9118 18.5082 20.8174 18.9525 20.5911L18.2715 19.2546C18.074 19.3552 17.8132 19.4243 17.3593 19.4614C16.8967 19.4992 16.3025 19.4998 15.45 19.4998V20.9998ZM19.2548 18.2713C19.039 18.6946 18.6948 19.0388 18.2715 19.2546L18.9525 20.5911C19.6581 20.2315 20.2317 19.6579 20.5913 18.9523L19.2548 18.2713ZM21 10.2744C21 9.47976 21.0062 8.94327 20.8686 8.43739L19.4212 8.83101C19.4938 9.09831 19.5 9.39758 19.5 10.2744H21ZM18.0146 7.13989C18.6932 7.69513 18.921 7.8894 19.0818 8.11493L20.303 7.24393C19.9986 6.81711 19.5795 6.48216 18.9645 5.97895L18.0146 7.13989ZM20.8686 8.43739C20.7522 8.00924 20.5607 7.60516 20.303 7.24393L19.0818 8.11493C19.2364 8.33167 19.3513 8.57412 19.4212 8.83101L20.8686 8.43739ZM4.5 10.2744C4.5 9.39758 4.50616 9.09831 4.57885 8.83101L3.13141 8.43739C2.99384 8.94327 3 9.47976 3 10.2744H4.5ZM5.03553 5.97895C4.4205 6.48216 4.00139 6.81711 3.69697 7.24393L4.91818 8.11493C5.07903 7.8894 5.30675 7.69513 5.98539 7.13989L5.03553 5.97895ZM4.57885 8.83101C4.64871 8.57412 4.7636 8.33167 4.91818 8.11493L3.69697 7.24393C3.43933 7.60516 3.24784 8.00925 3.13141 8.43739L4.57885 8.83101ZM7.75 16.9998H16.25V15.4998H7.75V16.9998Z" />
+                </g>
+              </svg>
+            </div>
+          </a>
+          <!-- tim icon | Primary -->
+          <a href="#">
+            <div
+              class="relative p-[1px] bg-neutral2-10 rounded-xl before:content-[''] before:absolute before:inset-0 before:opacity-15 before:bg-linear-card before:z-10 before:rounded-xl">
+              <div class="p-2.5 rounded-[11px] relative z-30 bg-neutral2-10 backdrop-blur-16">
+                <div class="absolute z-20 top-[1px] right-[1px]">
+                  <div
+                    class="relative p-[1px] bg-linear-red rounded-full before:content-[''] before:absolute before:inset-0 before:opacity-75 before:bg-linear-card before:rounded-full">
+                    <div
+                      class="rounded-full p-1 bg-linear-red h-5 w-5 flex items-center justify-center shadow-button backdrop-blur-16">
+                      <span class="small-sm"> 12 </span>
+                    </div>
+                  </div>
+                </div>
+
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="heart 2, like, health, life, fav" opacity="0.8">
+                    <path id="Icon"
+                      d="M12 5.57193C18.3331 -0.86765 29.1898 11.0916 12 20.75C-5.18982 11.0916 5.66687 -0.867651 12 5.57193Z"
+                      stroke="#F8F8F8" stroke-opacity="0.95" stroke-width="1.5" stroke-linejoin="round" />
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </a>
+          <!-- mess icon -->
+          <a href="./message.html">
+            <div
+              class="p-2.5 flex items-center justify-center rounded-xl backdrop-blur-16 bg-neutral1-0 stroke-text-tertiary hover:stroke-text-second">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="bubble 7 text, message" opacity="0.8">
+                  <path id="Icon"
+                    d="M15.25 9.75H8.75M12.25 14.25H8.75M2.75 20.25H16.25C19.0114 20.25 21.25 18.0114 21.25 15.25V8.75C21.25 5.98858 19.0114 3.75 16.25 3.75H7.75C4.98858 3.75 2.75 5.98858 2.75 8.75V20.25Z"
+                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+              </svg>
+            </div>
+          </a>
+          <!-- game icon -->
+          <a href="./explore.html">
+            <div
+              class="p-2.5 group flex items-center justify-center rounded-xl backdrop-blur-16 bg-neutral1-0 fill-text-tertiary hover:fill-text-second">
+              <svg class="fill-inherit" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <g id="icon, icons, shapes, games" opacity="0.8">
+                  <path id="Icon"
+                    d="M7.75 3.75C7.75 3.33579 7.41421 3 7 3C6.58579 3 6.25 3.33579 6.25 3.75H7.75ZM6.25 10.25C6.25 10.6642 6.58579 11 7 11C7.41421 11 7.75 10.6642 7.75 10.25H6.25ZM3.75 6.25C3.33579 6.25 3 6.58579 3 7C3 7.41421 3.33579 7.75 3.75 7.75V6.25ZM10.25 7.75C10.6642 7.75 11 7.41421 11 7C11 6.58579 10.6642 6.25 10.25 6.25V7.75ZM19.8284 15.2322C20.1213 14.9393 20.1213 14.4645 19.8284 14.1716C19.5355 13.8787 19.0607 13.8787 18.7678 14.1716L19.8284 15.2322ZM14.1716 18.7678C13.8787 19.0607 13.8787 19.5355 14.1716 19.8284C14.4645 20.1213 14.9393 20.1213 15.2322 19.8284L14.1716 18.7678ZM15.2322 14.1716C14.9393 13.8787 14.4645 13.8787 14.1716 14.1716C13.8787 14.4645 13.8787 14.9393 14.1716 15.2322L15.2322 14.1716ZM18.7678 19.8284C19.0607 20.1213 19.5355 20.1213 19.8284 19.8284C20.1213 19.5355 20.1213 19.0607 19.8284 18.7678L18.7678 19.8284ZM17 9.5C15.6193 9.5 14.5 8.38071 14.5 7H13C13 9.20914 14.7909 11 17 11V9.5ZM19.5 7C19.5 8.38071 18.3807 9.5 17 9.5V11C19.2091 11 21 9.20914 21 7H19.5ZM17 4.5C18.3807 4.5 19.5 5.61929 19.5 7H21C21 4.79086 19.2091 3 17 3V4.5ZM17 3C14.7909 3 13 4.79086 13 7H14.5C14.5 5.61929 15.6193 4.5 17 4.5V3ZM6.25 3.75V7H7.75V3.75H6.25ZM6.25 7V10.25H7.75V7H6.25ZM3.75 7.75H7V6.25H3.75V7.75ZM7 7.75H10.25V6.25H7V7.75ZM18.7678 14.1716L16.4697 16.4697L17.5303 17.5303L19.8284 15.2322L18.7678 14.1716ZM16.4697 16.4697L14.1716 18.7678L15.2322 19.8284L17.5303 17.5303L16.4697 16.4697ZM14.1716 15.2322L16.4697 17.5303L17.5303 16.4697L15.2322 14.1716L14.1716 15.2322ZM16.4697 17.5303L18.7678 19.8284L19.8284 18.7678L17.5303 16.4697L16.4697 17.5303ZM5.25 14.5H8.75V13H5.25V14.5ZM9.5 15.25V18.75H11V15.25H9.5ZM8.75 19.5H5.25V21H8.75V19.5ZM4.5 18.75V15.25H3V18.75H4.5ZM5.25 19.5C4.83579 19.5 4.5 19.1642 4.5 18.75H3C3 19.9926 4.00736 21 5.25 21V19.5ZM9.5 18.75C9.5 19.1642 9.16421 19.5 8.75 19.5V21C9.99264 21 11 19.9926 11 18.75H9.5ZM8.75 14.5C9.16421 14.5 9.5 14.8358 9.5 15.25H11C11 14.0074 9.99264 13 8.75 13V14.5ZM5.25 13C4.00736 13 3 14.0074 3 15.25H4.5C4.5 14.8358 4.83579 14.5 5.25 14.5V13Z" />
+                </g>
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+  </div>
+
+  <script src="../public/js/notification.js"></script>
+
+  <script src=" ../public/js/main.js">
+  </script>
+</body>
+
+</html>

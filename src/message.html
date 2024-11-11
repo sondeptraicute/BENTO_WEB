@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages</title>
+
+    <link rel="stylesheet" href="../public/css/global.css" />
+    <link rel="stylesheet" href="../public/css/message.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../cf.js"></script>
+    <script src="../public/js/mock_data.js"></script>
+</head>
+
+<body>
+    <section id="container"
+        class="relative w-full min-h-screen flex flex-col items-center gap-3 md:flex-row md:items-start md:justify-start">
+        <!-- Nav -->
+        <nav id="nav" class="fixed bottom-4 nav w-fit flex p-2 gap-4 mx-auto bg-surface rounded-[20px] md:hidden">
+            <a href="./home.html" class="nav-item cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <g opacity="0.8">
+                        <path
+                            d="M8.96046 3.73693L9.43539 4.3174L8.96046 3.73693ZM11.1874 2.23837L11.3906 2.96033L11.1874 2.23837ZM15.0395 3.73694L15.5145 3.15647H15.5145L15.0395 3.73694ZM12.8126 2.23837L12.6094 2.96033L12.8126 2.23837ZM5.38803 19.9231L5.04754 20.5913L5.38803 19.9231ZM3.75 15.45H4.5H3.75ZM4.07698 18.612L3.40873 18.9525L4.07698 18.612ZM19.923 18.612L20.5913 18.9525L19.923 18.612ZM18.612 19.9231L18.9525 20.5913L18.612 19.9231ZM20.1449 8.63444L19.4212 8.83125L20.1449 8.63444ZM18.4895 6.55966L18.0146 7.14013L18.0146 7.14013L18.4895 6.55966ZM19.6924 7.67968L19.0818 8.11518L19.6924 7.67968ZM3.75 10.2747H3H3.75ZM3.85513 8.63444L4.57885 8.83125L3.85513 8.63444ZM5.51046 6.55966L5.98539 7.14013L5.51046 6.55966ZM4.30757 7.67968L4.91818 8.11518L4.30757 7.67968ZM7.75 15.5C7.33579 15.5 7 15.8358 7 16.25C7 16.6643 7.33579 17 7.75 17V15.5ZM16.25 17C16.6642 17 17 16.6643 17 16.25C17 15.8358 16.6642 15.5 16.25 15.5V17ZM19.5 10.2747V15.45H21V10.2747H19.5ZM15.45 19.5H8.55V21H15.45V19.5ZM4.5 15.45V10.2747H3V15.45H4.5ZM5.98539 7.14013L9.43539 4.3174L8.48553 3.15647L5.03553 5.97919L5.98539 7.14013ZM14.5646 4.3174L18.0146 7.14013L18.9645 5.9792L15.5145 3.15647L14.5646 4.3174ZM9.43539 4.3174C9.98538 3.86741 10.3667 3.55605 10.6847 3.33303C10.9949 3.11544 11.2023 3.0133 11.3906 2.96033L10.9843 1.51641C10.5699 1.63301 10.2052 1.83715 9.82339 2.10495C9.44929 2.36732 9.01843 2.72045 8.48553 3.15647L9.43539 4.3174ZM15.5145 3.15647C14.9816 2.72046 14.5507 2.36732 14.1766 2.10495C13.7948 1.83715 13.4301 1.63301 13.0157 1.51641L12.6094 2.96033C12.7977 3.0133 13.0051 3.11544 13.3153 3.33303C13.6333 3.55605 14.0146 3.86741 14.5646 4.3174L15.5145 3.15647ZM11.3906 2.96033C11.7891 2.84818 12.2109 2.84818 12.6094 2.96033L13.0157 1.51641C12.3515 1.32949 11.6485 1.32949 10.9843 1.51641L11.3906 2.96033ZM8.55 19.5C7.69755 19.5 7.10331 19.4995 6.64068 19.4617C6.1868 19.4246 5.92604 19.3554 5.72852 19.2548L5.04754 20.5913C5.49175 20.8177 5.97189 20.912 6.51853 20.9567C7.05641 21.0006 7.7223 21 8.55 21V19.5ZM3 15.45C3 16.2777 2.99942 16.9436 3.04336 17.4815C3.08803 18.0281 3.18238 18.5083 3.40873 18.9525L4.74524 18.2715C4.6446 18.074 4.57546 17.8132 4.53838 17.3594C4.50058 16.8967 4.5 16.3025 4.5 15.45H3ZM5.72852 19.2548C5.30516 19.0391 4.96095 18.6949 4.74524 18.2715L3.40873 18.9525C3.76825 19.6581 4.34193 20.2318 5.04754 20.5913L5.72852 19.2548ZM19.5 15.45C19.5 16.3025 19.4994 16.8967 19.4616 17.3594C19.4245 17.8132 19.3554 18.074 19.2548 18.2715L20.5913 18.9525C20.8176 18.5083 20.912 18.0281 20.9566 17.4815C21.0006 16.9436 21 16.2777 21 15.45H19.5ZM15.45 21C16.2777 21 16.9436 21.0006 17.4815 20.9567C18.0281 20.912 18.5082 20.8177 18.9525 20.5913L18.2715 19.2548C18.074 19.3554 17.8132 19.4246 17.3593 19.4617C16.8967 19.4995 16.3025 19.5 15.45 19.5V21ZM19.2548 18.2715C19.039 18.6949 18.6948 19.0391 18.2715 19.2548L18.9525 20.5913C19.6581 20.2318 20.2317 19.6581 20.5913 18.9525L19.2548 18.2715ZM21 10.2747C21 9.48 21.0062 8.94352 20.8686 8.43763L19.4212 8.83125C19.4938 9.09856 19.5 9.39782 19.5 10.2747H21ZM18.0146 7.14013C18.6932 7.69538 18.921 7.88965 19.0818 8.11518L20.303 7.24418C19.9986 6.81736 19.5795 6.4824 18.9645 5.9792L18.0146 7.14013ZM20.8686 8.43763C20.7522 8.00949 20.5607 7.6054 20.303 7.24418L19.0818 8.11518C19.2364 8.33191 19.3513 8.57436 19.4212 8.83125L20.8686 8.43763ZM4.5 10.2747C4.5 9.39782 4.50616 9.09856 4.57885 8.83125L3.13141 8.43763C2.99384 8.94352 3 9.48 3 10.2747H4.5ZM5.03553 5.97919C4.4205 6.4824 4.00139 6.81736 3.69697 7.24418L4.91818 8.11518C5.07903 7.88965 5.30675 7.69538 5.98539 7.14013L5.03553 5.97919ZM4.57885 8.83125C4.64871 8.57436 4.7636 8.33191 4.91818 8.11518L3.69697 7.24418C3.43933 7.60541 3.24784 8.00949 3.13141 8.43763L4.57885 8.83125ZM7.75 17H16.25V15.5H7.75V17Z"
+                            fill="#F8F8F8" fill-opacity="0.7" />
+                    </g>
+                </svg>
+            </a>
+            <a href="./notification.html" class="nav-item cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <g opacity="0.8">
+                        <path
+                            d="M12 5.57193C18.3331 -0.86765 29.1898 11.0916 12 20.75C-5.18982 11.0916 5.66687 -0.867651 12 5.57193Z"
+                            stroke="#F8F8F8" stroke-opacity="0.5" stroke-width="1.5" stroke-linejoin="round" />
+                    </g>
+                </svg>
+            </a>
+            <a href="./message.html" class="nav-item cursor-pointer active">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <g opacity="0.8">
+                        <path
+                            d="M15.25 9.75H8.75M12.25 14.25H8.75M2.75 20.25H16.25C19.0114 20.25 21.25 18.0114 21.25 15.25V8.75C21.25 5.98858 19.0114 3.75 16.25 3.75H7.75C4.98858 3.75 2.75 5.98858 2.75 8.75V20.25Z"
+                            stroke="#F8F8F8" stroke-opacity="0.7" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </g>
+                </svg>
+            </a>
+
+            <a href="./explore.html" class="nav-item cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <g opacity="0.8">
+                        <path
+                            d="M7.75 3.75C7.75 3.33579 7.41421 3 7 3C6.58579 3 6.25 3.33579 6.25 3.75H7.75ZM6.25 10.25C6.25 10.6642 6.58579 11 7 11C7.41421 11 7.75 10.6642 7.75 10.25H6.25ZM3.75 6.25C3.33579 6.25 3 6.58579 3 7C3 7.41421 3.33579 7.75 3.75 7.75V6.25ZM10.25 7.75C10.6642 7.75 11 7.41421 11 7C11 6.58579 10.6642 6.25 10.25 6.25V7.75ZM19.8284 15.2322C20.1213 14.9393 20.1213 14.4645 19.8284 14.1716C19.5355 13.8787 19.0607 13.8787 18.7678 14.1716L19.8284 15.2322ZM14.1716 18.7678C13.8787 19.0607 13.8787 19.5355 14.1716 19.8284C14.4645 20.1213 14.9393 20.1213 15.2322 19.8284L14.1716 18.7678ZM15.2322 14.1716C14.9393 13.8787 14.4645 13.8787 14.1716 14.1716C13.8787 14.4645 13.8787 14.9393 14.1716 15.2322L15.2322 14.1716ZM18.7678 19.8284C19.0607 20.1213 19.5355 20.1213 19.8284 19.8284C20.1213 19.5355 20.1213 19.0607 19.8284 18.7678L18.7678 19.8284ZM17 9.5C15.6193 9.5 14.5 8.38071 14.5 7H13C13 9.20914 14.7909 11 17 11V9.5ZM19.5 7C19.5 8.38071 18.3807 9.5 17 9.5V11C19.2091 11 21 9.20914 21 7H19.5ZM17 4.5C18.3807 4.5 19.5 5.61929 19.5 7H21C21 4.79086 19.2091 3 17 3V4.5ZM17 3C14.7909 3 13 4.79086 13 7H14.5C14.5 5.61929 15.6193 4.5 17 4.5V3ZM6.25 3.75V7H7.75V3.75H6.25ZM6.25 7V10.25H7.75V7H6.25ZM3.75 7.75H7V6.25H3.75V7.75ZM7 7.75H10.25V6.25H7V7.75ZM18.7678 14.1716L16.4697 16.4697L17.5303 17.5303L19.8284 15.2322L18.7678 14.1716ZM16.4697 16.4697L14.1716 18.7678L15.2322 19.8284L17.5303 17.5303L16.4697 16.4697ZM14.1716 15.2322L16.4697 17.5303L17.5303 16.4697L15.2322 14.1716L14.1716 15.2322ZM16.4697 17.5303L18.7678 19.8284L19.8284 18.7678L17.5303 16.4697L16.4697 17.5303ZM5.25 14.5H8.75V13H5.25V14.5ZM9.5 15.25V18.75H11V15.25H9.5ZM8.75 19.5H5.25V21H8.75V19.5ZM4.5 18.75V15.25H3V18.75H4.5ZM5.25 19.5C4.83579 19.5 4.5 19.1642 4.5 18.75H3C3 19.9926 4.00736 21 5.25 21V19.5ZM9.5 18.75C9.5 19.1642 9.16421 19.5 8.75 19.5V21C9.99264 21 11 19.9926 11 18.75H9.5ZM8.75 14.5C9.16421 14.5 9.5 14.8358 9.5 15.25H11C11 14.0074 9.99264 13 8.75 13V14.5ZM5.25 13C4.00736 13 3 14.0074 3 15.25H4.5C4.5 14.8358 4.83579 14.5 5.25 14.5V13Z"
+                            fill="#F8F8F8" fill-opacity="0.7" />
+                    </g>
+                </svg>
+            </a>
+
+        </nav>
+
+        <sidebar id="sidebar"
+            class="hidden z-50 w-[72px] flex-col justify-start items-start p-3 fixed transition-all duration-[0.5s] min-h-screen bg-[#282828] md:bg-surface-3 md:flex ">
+
+            <div id="top-sidebar" class="w-full flex justify-between items-center">
+                <img id="logo" src="../public/svg/hexagon_logo.svg" alt="logo-in-home" class="size-[40px]" />
+                <button id="btn-collapse-control" class="min-w-6 invisible">
+                    <img src="../public/svg/ic_sidebar_collapse.svg" alt="icon collapse" class="size-[24px]" />
+                </button>
+                <button id="btn-collapse-sidebar" class="md:hidden bg-button p-[0.625rem] rounded-full">
+                    <img src="../public/svg/ic_close.svg" alt="icon collapse" class="size-[24px]" />
+                </button>
+            </div>
+
+            <div id="sidebar-menu" class="w-full flex flex-col justify-start gap-1 mt-3 grow">
+                <a href="./home.html" class="sidebar-items">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        class="m-1">
+                        <g opacity="0.8">
+                            <path
+                                d="M8.96046 3.73693L9.43539 4.3174L8.96046 3.73693ZM11.1874 2.23837L11.3906 2.96033L11.1874 2.23837ZM15.0395 3.73694L15.5145 3.15647H15.5145L15.0395 3.73694ZM12.8126 2.23837L12.6094 2.96033L12.8126 2.23837ZM5.38803 19.9231L5.04754 20.5913L5.38803 19.9231ZM3.75 15.45H4.5H3.75ZM4.07698 18.612L3.40873 18.9525L4.07698 18.612ZM19.923 18.612L20.5913 18.9525L19.923 18.612ZM18.612 19.9231L18.9525 20.5913L18.612 19.9231ZM20.1449 8.63444L19.4212 8.83125L20.1449 8.63444ZM18.4895 6.55966L18.0146 7.14013L18.0146 7.14013L18.4895 6.55966ZM19.6924 7.67968L19.0818 8.11518L19.6924 7.67968ZM3.75 10.2747H3H3.75ZM3.85513 8.63444L4.57885 8.83125L3.85513 8.63444ZM5.51046 6.55966L5.98539 7.14013L5.51046 6.55966ZM4.30757 7.67968L4.91818 8.11518L4.30757 7.67968ZM7.75 15.5C7.33579 15.5 7 15.8358 7 16.25C7 16.6643 7.33579 17 7.75 17V15.5ZM16.25 17C16.6642 17 17 16.6643 17 16.25C17 15.8358 16.6642 15.5 16.25 15.5V17ZM19.5 10.2747V15.45H21V10.2747H19.5ZM15.45 19.5H8.55V21H15.45V19.5ZM4.5 15.45V10.2747H3V15.45H4.5ZM5.98539 7.14013L9.43539 4.3174L8.48553 3.15647L5.03553 5.97919L5.98539 7.14013ZM14.5646 4.3174L18.0146 7.14013L18.9645 5.9792L15.5145 3.15647L14.5646 4.3174ZM9.43539 4.3174C9.98538 3.86741 10.3667 3.55605 10.6847 3.33303C10.9949 3.11544 11.2023 3.0133 11.3906 2.96033L10.9843 1.51641C10.5699 1.63301 10.2052 1.83715 9.82339 2.10495C9.44929 2.36732 9.01843 2.72045 8.48553 3.15647L9.43539 4.3174ZM15.5145 3.15647C14.9816 2.72046 14.5507 2.36732 14.1766 2.10495C13.7948 1.83715 13.4301 1.63301 13.0157 1.51641L12.6094 2.96033C12.7977 3.0133 13.0051 3.11544 13.3153 3.33303C13.6333 3.55605 14.0146 3.86741 14.5646 4.3174L15.5145 3.15647ZM11.3906 2.96033C11.7891 2.84818 12.2109 2.84818 12.6094 2.96033L13.0157 1.51641C12.3515 1.32949 11.6485 1.32949 10.9843 1.51641L11.3906 2.96033ZM8.55 19.5C7.69755 19.5 7.10331 19.4995 6.64068 19.4617C6.1868 19.4246 5.92604 19.3554 5.72852 19.2548L5.04754 20.5913C5.49175 20.8177 5.97189 20.912 6.51853 20.9567C7.05641 21.0006 7.7223 21 8.55 21V19.5ZM3 15.45C3 16.2777 2.99942 16.9436 3.04336 17.4815C3.08803 18.0281 3.18238 18.5083 3.40873 18.9525L4.74524 18.2715C4.6446 18.074 4.57546 17.8132 4.53838 17.3594C4.50058 16.8967 4.5 16.3025 4.5 15.45H3ZM5.72852 19.2548C5.30516 19.0391 4.96095 18.6949 4.74524 18.2715L3.40873 18.9525C3.76825 19.6581 4.34193 20.2318 5.04754 20.5913L5.72852 19.2548ZM19.5 15.45C19.5 16.3025 19.4994 16.8967 19.4616 17.3594C19.4245 17.8132 19.3554 18.074 19.2548 18.2715L20.5913 18.9525C20.8176 18.5083 20.912 18.0281 20.9566 17.4815C21.0006 16.9436 21 16.2777 21 15.45H19.5ZM15.45 21C16.2777 21 16.9436 21.0006 17.4815 20.9567C18.0281 20.912 18.5082 20.8177 18.9525 20.5913L18.2715 19.2548C18.074 19.3554 17.8132 19.4246 17.3593 19.4617C16.8967 19.4995 16.3025 19.5 15.45 19.5V21ZM19.2548 18.2715C19.039 18.6949 18.6948 19.0391 18.2715 19.2548L18.9525 20.5913C19.6581 20.2318 20.2317 19.6581 20.5913 18.9525L19.2548 18.2715ZM21 10.2747C21 9.48 21.0062 8.94352 20.8686 8.43763L19.4212 8.83125C19.4938 9.09856 19.5 9.39782 19.5 10.2747H21ZM18.0146 7.14013C18.6932 7.69538 18.921 7.88965 19.0818 8.11518L20.303 7.24418C19.9986 6.81736 19.5795 6.4824 18.9645 5.9792L18.0146 7.14013ZM20.8686 8.43763C20.7522 8.00949 20.5607 7.6054 20.303 7.24418L19.0818 8.11518C19.2364 8.33191 19.3513 8.57436 19.4212 8.83125L20.8686 8.43763ZM4.5 10.2747C4.5 9.39782 4.50616 9.09856 4.57885 8.83125L3.13141 8.43763C2.99384 8.94352 3 9.48 3 10.2747H4.5ZM5.03553 5.97919C4.4205 6.4824 4.00139 6.81736 3.69697 7.24418L4.91818 8.11518C5.07903 7.88965 5.30675 7.69538 5.98539 7.14013L5.03553 5.97919ZM4.57885 8.83125C4.64871 8.57436 4.7636 8.33191 4.91818 8.11518L3.69697 7.24418C3.43933 7.60541 3.24784 8.00949 3.13141 8.43763L4.57885 8.83125ZM7.75 17H16.25V15.5H7.75V17Z"
+                                fill="#F8F8F8" fill-opacity="0.7" />
+                        </g>
+                    </svg>
+                    <span class="text-text-light base text-sm font-semibold">Home</span>
+                </a>
+                <a href="notification.html" class="sidebar-items">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        class="m-1">
+                        <g opacity="0.8">
+                            <path
+                                d="M12 5.57193C18.3331 -0.86765 29.1898 11.0916 12 20.75C-5.18982 11.0916 5.66687 -0.867651 12 5.57193Z"
+                                stroke="#F8F8F8" stroke-opacity="0.5" stroke-width="1.5" stroke-linejoin="round" />
+                        </g>
+                    </svg>
+                    <span class="text-text-light base text-sm font-semibold">Notification</span>
+                </a>
+                <a href="./message.html" class="sidebar-items">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        class="m-1">
+                        <g opacity="0.8">
+                            <path
+                                d="M15.25 9.75H8.75M12.25 14.25H8.75M2.75 20.25H16.25C19.0114 20.25 21.25 18.0114 21.25 15.25V8.75C21.25 5.98858 19.0114 3.75 16.25 3.75H7.75C4.98858 3.75 2.75 5.98858 2.75 8.75V20.25Z"
+                                stroke="#F8F8F8" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </g>
+                    </svg>
+                    <span class="text-text-light base text-sm font-semibold">Messages</span>
+                </a>
+                <a href="./profile_user_view.html" class="sidebar-items">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        class="m-1">
+                        <g opacity="0.8">
+                            <path
+                                d="M15.7499 6.5C15.7499 8.57107 14.071 10.25 11.9999 10.25C9.92886 10.25 8.24993 8.57107 8.24993 6.5C8.24993 4.42893 9.92886 2.75 11.9999 2.75C14.071 2.75 15.7499 4.42893 15.7499 6.5Z"
+                                stroke="#F8F8F8" stroke-opacity="0.5" stroke-width="1.5" stroke-linejoin="round" />
+                            <path
+                                d="M11.9999 13.25C9.02147 13.25 6.67426 14.8039 5.43328 17.1121C4.59617 18.6691 6.02742 20.25 7.79518 20.25H16.2047C17.9724 20.25 19.4037 18.6691 18.5666 17.1121C17.3256 14.8039 14.9784 13.25 11.9999 13.25Z"
+                                stroke="#F8F8F8" stroke-opacity="0.5" stroke-width="1.5" stroke-linejoin="round" />
+                        </g>
+                    </svg>
+                    <span class="text-text-light base text-sm font-semibold">Profile</span>
+                </a>
+                <a href="./explore.html" class="sidebar-items">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        class="m-1">
+                        <g opacity="0.8">
+                            <path
+                                d="M7.75 3.75C7.75 3.33579 7.41421 3 7 3C6.58579 3 6.25 3.33579 6.25 3.75H7.75ZM6.25 10.25C6.25 10.6642 6.58579 11 7 11C7.41421 11 7.75 10.6642 7.75 10.25H6.25ZM3.75 6.25C3.33579 6.25 3 6.58579 3 7C3 7.41421 3.33579 7.75 3.75 7.75V6.25ZM10.25 7.75C10.6642 7.75 11 7.41421 11 7C11 6.58579 10.6642 6.25 10.25 6.25V7.75ZM19.8284 15.2322C20.1213 14.9393 20.1213 14.4645 19.8284 14.1716C19.5355 13.8787 19.0607 13.8787 18.7678 14.1716L19.8284 15.2322ZM14.1716 18.7678C13.8787 19.0607 13.8787 19.5355 14.1716 19.8284C14.4645 20.1213 14.9393 20.1213 15.2322 19.8284L14.1716 18.7678ZM15.2322 14.1716C14.9393 13.8787 14.4645 13.8787 14.1716 14.1716C13.8787 14.4645 13.8787 14.9393 14.1716 15.2322L15.2322 14.1716ZM18.7678 19.8284C19.0607 20.1213 19.5355 20.1213 19.8284 19.8284C20.1213 19.5355 20.1213 19.0607 19.8284 18.7678L18.7678 19.8284ZM17 9.5C15.6193 9.5 14.5 8.38071 14.5 7H13C13 9.20914 14.7909 11 17 11V9.5ZM19.5 7C19.5 8.38071 18.3807 9.5 17 9.5V11C19.2091 11 21 9.20914 21 7H19.5ZM17 4.5C18.3807 4.5 19.5 5.61929 19.5 7H21C21 4.79086 19.2091 3 17 3V4.5ZM17 3C14.7909 3 13 4.79086 13 7H14.5C14.5 5.61929 15.6193 4.5 17 4.5V3ZM6.25 3.75V7H7.75V3.75H6.25ZM6.25 7V10.25H7.75V7H6.25ZM3.75 7.75H7V6.25H3.75V7.75ZM7 7.75H10.25V6.25H7V7.75ZM18.7678 14.1716L16.4697 16.4697L17.5303 17.5303L19.8284 15.2322L18.7678 14.1716ZM16.4697 16.4697L14.1716 18.7678L15.2322 19.8284L17.5303 17.5303L16.4697 16.4697ZM14.1716 15.2322L16.4697 17.5303L17.5303 16.4697L15.2322 14.1716L14.1716 15.2322ZM16.4697 17.5303L18.7678 19.8284L19.8284 18.7678L17.5303 16.4697L16.4697 17.5303ZM5.25 14.5H8.75V13H5.25V14.5ZM9.5 15.25V18.75H11V15.25H9.5ZM8.75 19.5H5.25V21H8.75V19.5ZM4.5 18.75V15.25H3V18.75H4.5ZM5.25 19.5C4.83579 19.5 4.5 19.1642 4.5 18.75H3C3 19.9926 4.00736 21 5.25 21V19.5ZM9.5 18.75C9.5 19.1642 9.16421 19.5 8.75 19.5V21C9.99264 21 11 19.9926 11 18.75H9.5ZM8.75 14.5C9.16421 14.5 9.5 14.8358 9.5 15.25H11C11 14.0074 9.99264 13 8.75 13V14.5ZM5.25 13C4.00736 13 3 14.0074 3 15.25H4.5C4.5 14.8358 4.83579 14.5 5.25 14.5V13Z"
+                                fill="#F8F8F8" fill-opacity="0.7" />
+                        </g>
+                    </svg>
+                    <span class="text-text-light base text-sm font-semibold">Explore</span>
+                </a>
+            </div>
+
+            <div id="bottom-sidebar" class="w-full flex flex-col gap-2 p-0">
+                <div class="flex items-end gap-3 p-1.5">
+                    <a href="./profile_user_view.html">
+                        <div id="user-info" class="relative">
+                            <div
+                                class="absolute size-[1.25rem] -left-1 -top-1 rounded-full bg-[#F8F8F8E5] border-[3px] border-[#282828]">
+                            </div>
+
+                            <img src="https://i.pinimg.com/originals/d3/6f/ef/d36fef4f4885354afcfd3753dee95741.jpg"
+                                alt="avatar" class="rounded-full min-w-[40px] size-[40px]" />
+                        </div>
+                    </a>
+                    <div class="user-name flex md:hidden flex-col grow">
+                        <span class="text-text-secondary base text-sm font-semibold">Thanh</span>
+                        <span class="text-text-light caption text-xs font-normal">@nht2</span>
+                    </div>
+
+                    <div id="group-btn" class="flex flex-row items-center gap-3 md:flex-col-reverse">
+                        <button class="btn-more hidden btn-block justify-self-end">
+                            <img src="../public/svg/ic_more.svg" alt="more" class="size-[24px] m-[0.625rem]" />
+                        </button>
+
+                        <div id="options-more"
+                            class="flex flex-row items-center md:bg-neutral-600 md:flex-col md:rounded-[2rem]">
+                            <a href="settings.html">
+                                <button
+                                    class="flex-1 p-2.5 hover:bg-neutral-700 rounded-[2rem] md:rounded-bl-none md:rounded-br-none">
+                                    <img src="../public/svg/ic_setting.svg" alt="setting" class="size-[24px]" />
+                                </button>
+                            </a>
+                            <a href="login.html">
+                                <button
+                                    class="flex-1 p-2.5 hover:bg-neutral-700 rounded-[2rem] md:rounded-tl-none md:rounded-tr-none">
+                                    <img src="../public/svg/ic_logout.svg" alt="logout" class="size-[24px]" />
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="hidden md:block w-fit bg-button rounded-full p-[10px] btn-add-post">
+                    <img src="../public/svg/ic_add.svg" alt="icon add" class="max-size-[24px]" />
+                </button>
+
+                <button
+                    class="w-full base text-sm font-semibold text-text-secondary bg-button rounded-[1.25rem] px-6 py-3 btn-block md:hidden">Post</button>
+                    <p class="text-text-secondary text-[10px] text-center">Code by <a target="_blank" href="https://200lab.io/" class="">@<span class="text-[#278e4f]">200</span><span class="text-[#2170a1]">Lab</span></a></p>
+                </div>
+        </sidebar>
+        <!-- Main -->
+        <section id="main-container"
+            class="main-container translate-none w-full h-full flex flex-col justify-start gap-3 transition-all duration-[0.5s] md:ml-[72px] lg:flex-row lg:items-start lg:gap-0">
+            <section id="conversation-sidebar"
+                class="max-w-full min-h-full fixed bg-surface-2 flex flex-col gap-3 p-3 lg:max-w-[17.5rem] xl:max-w-[25rem]">
+                <section id="header-container" class="w-full flex justify-start items-center gap-2">
+                    <div id="search-bar" class="flex grow items-center gap-3 rounded-[2.625rem] p-2.5 bg-neutral-370">
+                        <img src="../public/svg/ic_search.svg" alt="search" class="size-[24px]" />
+                        <input type="text" placeholder="Search..."
+                            class="grow bg-transparent placeholder:text-text-light text-sm font-normal" />
+                    </div>
+                    <button class="btn-add bg-button rounded-full p-2">
+                        <img src="../public/svg/ic_add.svg" alt="icon add" class="size-[24px]" />
+                    </button>
+                </section>
+
+                <section id="toggle-group"
+                    class="w-full p-1 flex justify-between items-center bg-neutral-36 rounded-[100px]">
+                    <button
+                        class="toggle-item flex-1 px-6 py-2 text-text-secondary text-sm font-semibold active">Primary</button>
+                    <button
+                        class="toggle-item flex-1 px-6 py-2 text-text-secondary text-sm font-semibold ">Request</button>
+                </section>
+
+                <section id="conversation-container" class="w-full h-full flex flex-col gap-2">
+
+                </section>
+            </section>
+
+            <section id="conversation-detail"
+                class="hidden w-full h-full flex-col bg-surface lg:flex lg:ml-[17.5rem] xl:ml-[25rem]">
+                <section id="conversation-header" class="w-full flex items-center gap-4 py-3 pr-6 pl-3">
+                    <div id="avatar-user" class="relative">
+                        <div
+                            class="absolute size-[1.25rem] -left-1 -top-1 rounded-full bg-[#F8F8F8] border-[3px] border-[#323232]">
+                        </div>
+                        <img src="https://i.pinimg.com/originals/d3/6f/ef/d36fef4f4885354afcfd3753dee95741.jpg"
+                            alt="avatar" class="rounded-full min-w-[44px] size-[44px]" />
+                    </div>
+                    <span class="base text-sm font-medium text-text-primary grow">Apple
+                        Releases </span>
+                    <button class="bg-button rounded-full p-[0.53125rem]">
+                        <img src="../public/svg/ic_more.svg" alt="more" class="size-[24px]" />
+                    </button>
+                    <button class="btn-close bg-button rounded-full p-[0.53125rem] lg:hidden">
+                        <img src="../public/svg/ic_close.svg" alt="close" class="" />
+                    </button>
+                </section>
+
+                <section id="chat-container"
+                    class="flex flex-col gap-2 max-h-[calc(100vh-150px)] overflow-y-scroll items-center justify-start p-3">
+                    <div class="message-item w-full flex items-start gap-5 rounded-[1.25rem] p-3 bg-neutral-22">
+                        <img src="https://i.pinimg.com/originals/4a/7e/74/4a7e7438c14c2807c81cba4a99e4cec2.jpg"
+                            alt="avatar-user" class="avatar-user rounded-full min-w-[44px] size-[44px]" />
+                        <div class="message-content flex flex-col gap-2">
+                            <div class="header-content flex justify-items-auto items-center">
+                                <h3
+                                    class="base text-text-primary text-sm font-medium justify-self-start opacity-80 mr-4">
+                                    Moyo
+                                    Shiro
+                                </h3>
+                                <span
+                                    class="caption text-text-light text-xs font-normal justify-self-start grow opacity-45">09:00
+                                    AM</span>
+                            </div>
+                            <span class="text-sm text-text-secondary opacity-80 self-stretch">Just launched my
+                                new
+                                portfolio
+                                website! 🚀
+                                Check out
+                                these 15 standout
+                                examples of
+                                creative, sleek, and interactive portfolio designs that inspired me. Which one's
+                                your
+                                favorite? #WebDesign #PortfolioInspiration</span>
+                        </div>
+                    </div>
+                    <div class="message-item w-full flex items-start gap-5 rounded-[1.25rem] p-3 bg-neutral-22">
+                        <img src="https://i.pinimg.com/originals/14/ab/f1/14abf1f58ea5686cf9e24ec22a099892.jpg"
+                            alt="avatar-user" class="avatar-user rounded-full min-w-[44px] size-[44px]" />
+                        <div class="message-content flex flex-col gap-2">
+                            <div class="header-content flex justify-items-auto items-center">
+                                <h3
+                                    class="base text-text-primary text-sm font-medium justify-self-start opacity-80 mr-4">
+                                    Moyo
+                                    Shiro
+                                </h3>
+                                <span
+                                    class="caption text-text-light text-xs font-normal justify-self-start grow opacity-45">09:00
+                                    AM</span>
+                            </div>
+                            <span class="text-sm text-text-secondary opacity-80 self-stretch">Just launched my
+                                new
+                                portfolio
+                                website! 🚀
+                                Check out
+                                these 15 standout
+                                examples of
+                                creative, sleek, and interactive portfolio designs that inspired me. Which one's
+                                your
+                                favorite? #WebDesign #PortfolioInspiration</span>
+                            <img src="https://i.pinimg.com/originals/a4/72/10/a47210899e2f804d4f4aead44adaefe0.jpg"
+                                loading="lazy" class="max-h-[22.5rem] w-full md: rounded-[1.5rem] object-cover">
+                        </div>
+                    </div>
+                    <div class="message-item w-full flex items-start gap-5 rounded-[1.25rem] p-3 bg-neutral-22">
+                        <img src="https://i.pinimg.com/originals/4a/7e/74/4a7e7438c14c2807c81cba4a99e4cec2.jpg"
+                            alt="avatar-user" class="avatar-user rounded-full min-w-[44px] size-[44px]" />
+                        <div class="message-content flex flex-col gap-2">
+                            <div class="header-content flex justify-items-auto items-center">
+                                <h3
+                                    class="base text-text-primary text-sm font-medium justify-self-start opacity-80 mr-4">
+                                    Moyo
+                                    Shiro
+                                </h3>
+                                <span
+                                    class="caption text-text-light text-xs font-normal justify-self-start grow opacity-45">09:00
+                                    AM</span>
+                            </div>
+                            <span class="text-sm text-text-secondary opacity-80 self-stretch">Just launched my
+                                new
+                                portfolio
+                                website! 🚀
+                                Check out
+                                these 15 standout
+                                examples of
+                                creative, sleek, and interactive portfolio designs that inspired me. Which one's
+                                your
+                                favorite? #WebDesign #PortfolioInspiration</span>
+                            <!-- <img src="https://i.pinimg.com/originals/a4/72/10/a47210899e2f804d4f4aead44adaefe0.jpg" loading="lazy"
+                                class="max-h-[22.5rem] w-full md: rounded-[1.5rem] object-cover"> -->
+                        </div>
+                    </div>
+                </section>
+
+                <section id="chat-input" class="w-full p-3">
+                    <form onsubmit="handleSentMessage(event)">
+                        <div class="flex items-center gap-4 p-2.5 rounded-[2.625rem] bg-neutral-430">
+                            <button class="btn-upload p-[0.4375rem]">
+                                <img src="../public/svg/ic_upload.svg" alt="upload" class="size-[24px]" />
+                            </button>
+                            <input type="text" placeholder="Type a message..."
+                                class="grow text-text-primary placeholder:text-text-light placeholder:text-sm placeholder:font-normal bg-transparent" />
+                            <button type="submit" class="hidden"></button>
+                        </div>
+                    </form>
+                </section>
+            </section>
+
+        </section>
+        <script src="../public/js/main.js"></script>
+
+        <script src="../public/js/message.js"></script>
+
+</body>
+
+</html>

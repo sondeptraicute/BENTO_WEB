@@ -1,0 +1,21 @@
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.tag-card.active {
+  border-radius: 12px;
+  background-color: var(--neutral-15);
+
+  svg g path {
+    fill-opacity: 0.95 !important;
+    stroke-opacity: 0.95 !important;
+  }
+  span {
+    color: var(--text-primary) !important;
+  }
+}
